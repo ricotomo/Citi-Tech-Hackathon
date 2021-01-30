@@ -219,7 +219,7 @@
     </div>
     <div class="text-right">
 	    <button class="btn btn-default btn-lg ">For Students</button>
-        <button class="btn btn-default btn-lg " onclick = "location.href = 'investor_landing'";>For Investors</button>
+        <button class="btn btn-default btn-lg " onclick = "location.href = 'investor_logged.html'";>For Investors</button>
         <button class="btn btn-default btn-lg ">About Us</button>
 
     </div>
@@ -231,106 +231,14 @@
 </nav>
 
 
-<!-- Container (About Section) -->
-<div id="about" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
-      <h2>Transforming the Way</h2><br>
-      <h2> Education is Paid For.</h2>
-      <br><button class="btn btn-default btn-lg">Get Started</button>
-    </div>
-    <div class="col-sm-6">
-      <img id = "student-homepage-main" src = "https://s3-alpha-sig.figma.com/img/f130/fdf3/a10b26d28ca693d42e3606f96ef4a5ab?Expires=1612742400&Signature=Ib1ihtgnyG3IuPFGNm0qHtG~PSXqFiaQYUNt9HmWKSWdK-zyj0UoXKLiQzDC3iMubPaZ3NFMRyV8XGSnB1sS31Isw~dFmWJDYzvIc0pOe8UuGBjBko-ehQzs1zdpYPT9desu-y6fkqzSf-o0x6G5j9DAJV6eKTIPXovUvSytJJ7m~D1cldE0YZWEmhMGldhKQgXlLO1Ubjc2Wq0JuIcnUgLEdHPZXH49czHwRu~kRU6pqdZATJOfZAA9h6NE6hr3KZY9ky7F-~rbaGWT55uhRcfzxYLucBqiQbCpPpJ-pe~DeO3ZpBE7ftxMCfSx7ffBMbnlc5FaoNPFGxNDO73TaQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" >
-    </div>
-  </div>
-</div>
 
-
-
-
-
-<!-- Container (Benefits Section) -->
-<div class="container-fluid">
-  <div class="text-center">
-    
-    <h4>Benefits of Univest for Students</h4>
-  </div>
-  <div class="row slideanim">
-    <div class="col-sm-3">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>1</h1>
-        </div>
-        
-      </div>      
-    </div>     
-    <div class="col-sm-3">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>2</h1>
-        </div>
-        
-      </div>      
-    </div>       
-    <div class="col-sm-3">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>3</h1>
-        </div>
-        
-      </div>      
-    </div>
-    <div class="col-sm-3">
-        <div class="panel panel-default text-center">
-          <div class="panel-heading">
-            <h1>4</h1>
-          </div>
-       
-          
-        </div>      
-      </div>     
-  </div>
-</div>
 
 
 
 
 
 <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
 </script>
 
 </body>
