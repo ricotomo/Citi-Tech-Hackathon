@@ -29,8 +29,10 @@ def ISA_form():
     print("HTTP POST handler")
     try:
       print("enter try for DB connection")
-      firstname = "satoshi"
-      lastname = "nakamoto"
+      firstname = request.form.get('firstname')
+      print("tuition from form is " + firstname)
+      lastname = request.form.get('lastname')
+      print("tuition from form is " + lastname)
       tuition = request.form.get('tuition')
       print("tuition from form is " + tuition)
       college = request.form.get('college')
@@ -39,15 +41,24 @@ def ISA_form():
       print("major from form is " + major)
       degree = request.form.get('degree')
       print("degree from form is " + degree)
-      verification = 0
-      package = 0
-      gender = 1
-      momed = "graduate"
-      daded = "high school"
-      parusa = 2
-      granusa = 3
-      pol = "extremely liberal"
-      msg = "buy Gamestop"
+      verification = request.form.get('verification')
+      print("ver from form is " + verification)
+      package = request.form.get('package')
+      print("package from form is " + package)
+      gender = request.form.get('gender')
+      print("gender from form is " + gender)
+      momed = request.form.get('momed')
+      print("momed from form is " + momed)
+      daded = request.form.get('daded')
+      print("daded from form is " + daded)
+      parusa = request.form.get('parusa')
+      print("parusa from form is " + parusa)
+      granusa = request.form.get('granusa')
+      print("granusa from form is " + granusa)
+      pol = request.form.get('pol')
+      print("politics from form is " + pol)
+      msg = request.form.get('msg')
+      print("degree from form is " + msg)
       #print message for testing purposes. Does not work! Causes an exception!
       #print("testing form elements " + firstname + " " + lastname + " " + tuition + " " + college + " " +major + " " +degree + " " +verification + " " +package + " " +gender + " " +momed + " " +daded + " " +parusa + " " +granusa + " " +pol + " " +msg)
       with sqlite3.connect("database.db") as con:
