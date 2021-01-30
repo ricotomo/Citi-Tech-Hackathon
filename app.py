@@ -9,7 +9,7 @@ def hello():
 @app.route('/investor_landing',methods = ['GET'])
 def investor_landing():
    if request.method == 'GET':
-      return render_template('Investor_logged.html')
+      return render_template('investor_logged.html')
    else:
       return render_template('student_homepage.html')
 
