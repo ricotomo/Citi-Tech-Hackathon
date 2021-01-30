@@ -48,10 +48,11 @@ def ISA_form():
       granusa = 3
       pol = "extremely liberal"
       msg = "buy Gamestop"
-      print("testing accessing form elements " + firstname + " " + lastname + " " + tuition + " " + college + " " +major + " " +degree + " " +verification + " " +package + " " +gender + " " +momed + " " +daded + " " +parusa + " " +granusa + " " +pol + " " +msg)
+      #print message for testing purposes. Does not work! Causes an exception!
+      #print("testing form elements " + firstname + " " + lastname + " " + tuition + " " + college + " " +major + " " +degree + " " +verification + " " +package + " " +gender + " " +momed + " " +daded + " " +parusa + " " +granusa + " " +pol + " " +msg)
       with sqlite3.connect("database.db") as con:
         cur = con.cursor()
-        cur.execute("INSERT INTO isastudent1 (id, firstname, lastname, tuition,college,major,degree,verification,package,gender,momed,daded,parusa,granusa,pol, msg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)",(firstname, lastname, tuition,college,major,degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) )
+        cur.execute("INSERT INTO isastudent1 (firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) )
         con.commit()
         print("record successfully added to DB")
     except:
