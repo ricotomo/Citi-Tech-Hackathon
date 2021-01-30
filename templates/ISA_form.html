@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--import Bootstrap-->
+    <title>Citi ISA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-default">
+        <!--container fluid used to always use full screen width-->
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Univest</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!--Bootstrap grids-->
+      <!--container fluid used to always use full screen width-->
+      <div class="container-fluid">
+        <!--one row with three columns-->
+        <div class="row">
+            <!--use small column settings because bootstrap automatically scales up but not down-->
+            <div class="col-sm-3">
+            </div>
+            <!--middle col is twice as large as outer ones-->
+            <div class="col-sm-6">
+                <h1 id="form-header">You’re Just a Few Clicks Away from Starting you’re College Journey!</h1>
+            </br>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="tuition">🤳  Tell Us About Yourself</label>
+                        <input type="firstname" class="form-control" placeholder="Your first name" name="firstname">
+                    </br>
+                        <input type="lastname" class="form-control" placeholder="Your last name" name="lastname">
+                      </div>
+                    <div class="form-group">
+                      <label for="tuition">🤑 Tuition Amount</label>
+                      <input type="tuition" class="form-control" name="tuition">
+                    </div>
+                    <div class="form-group">
+                      <label for="major">📚 Major</label>
+                      <select class="form-control" name="major">
+                        <option>Select your future major</option>
+                        <option>Computer science</option>
+                        <option>Finance</option>
+                        <option>Education</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="college">🏫 College</label>
+                        <select class="form-control" name="college">
+                            <option>Select your future college</option>
+                            <option>University of Florida</option>
+                            <option>Carnegie Mellon</option>
+                            <option>Rutgers University</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="degree">🎓 Degree</label>
+                        <select class="form-control" name="degree">
+                            <option>Select your degree type</option>
+                            <option>Associate (2 yr)</option>
+                            <option>Bachelor (3 yr)</option>
+                            <option>Bachelor (4 yr)</option>
+                            <option>Graduate (1 yr)</option>
+                            <option>Graduate (2+ yr)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tuition">🔎 Verification</label>
+                        <input class="form-control" name="verification">
+                      </div>
+                      <div class="form-group">
+                        <label for="tuition">📦 Package</label>
+                        <input class="form-control" name="package">
+                      </div>
+                      <div class="form-group">
+                        <label for="tuition">♀️♂️ Gender</label>
+                        <input class="form-control" name="gender">
+                      </div>
+                      <div class="form-group">
+                        <label for="momed">👩‍👩‍👦 One Big Happy Family</label>
+                        <select class="form-control" name="momed">
+                            <option>Mom's Education</option>
+                            <option>GED</option>
+                            <option>High School</option>
+                            <option>Some university</option>
+                            <option>Associate</option>
+                            <option>Bachelor's</option>
+                            <option>Master</option>
+                            <option>PhD</option>
+                        </select>
+                    </br> 
+                        <select class="form-control" name="daded">
+                            <option>Dad's Education</option>
+                            <option>GED</option>
+                            <option>High School</option>
+                            <option>Some university</option>
+                            <option>Associate</option>
+                            <option>Bachelor's</option>
+                            <option>Master</option>
+                            <option>PhD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>🎶 🎤 Born in the USA</label>
+                        <input class="form-control" placeholder="Where 1 or both of your parents born in the USA?" name="parusa">
+                    </br>
+                        <input class="form-control" placeholder="How many of your grandparents born in the USA?" name="granusa">
+                    </div>
+                    <div class="form-group">
+                        <label for="degree">🎓 Politics</label>
+                        <select class="form-control" name="pol">
+                            <option>How would you describe your political views?</option>
+                            <option>Very conservative</option>
+                            <option>Conservative</option>
+                            <option>Center</option>
+                            <option>Liberal</option>
+                            <option>Very liberal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label> ✍🏼 Message to Investors</label>
+                        <input type="text" class="form-control" placeholder="Don't be shy..." name="msg">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </form> 
+            </div>      
+            <div class="col-sm-3">
+            </div>
+          </div>
+      </div>
+</body>
+</html>
