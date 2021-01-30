@@ -36,14 +36,14 @@
             </div>
             <!--middle col is twice as large as outer ones-->
             <div class="col-sm-6">
-                <form action="/action_page.php">
+                <form action="" method="post">
                     <div class="form-group">
                       <label for="tuition">Tuition Amount</label>
-                      <input type="tuition" class="form-control" id="tuition">
+                      <input type="tuition" class="form-control" name="tuition">
                     </div>
                     <div class="form-group">
                       <label for="major">Major</label>
-                      <select class="form-control" id="major" type="major">
+                      <select class="form-control" name="major">
                         <option>Select your future major</option>
                         <option>Computer science</option>
                         <option>Finance</option>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                         <label for="college">College</label>
-                        <select class="form-control" id="college" type="college">
+                        <select class="form-control" name="college">
                             <option>Select your future college</option>
                             <option>University of Florida</option>
                             <option>Carnegie Mellon</option>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="degree">Degree</label>
-                        <select class="form-control" id="degree" type="degree">
+                        <select class="form-control" name="degree">
                             <option>Select your degree type</option>
                             <option>Associate (2 yr)</option>
                             <option>Bachelor (3 yr)</option>
