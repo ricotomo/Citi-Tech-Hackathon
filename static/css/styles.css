@@ -51,10 +51,14 @@ label {
 #button-form-save:hover{
     background-color: var(--dark-blue-green); 
 }
-.defactivebtn{
-    background-color: var(--dark-green) !important;
-    color: white;
+
+#login-icon{
+    width: 43px;
+    height: 43px;
+    transform: translate(0, 50%);
+    float: right !important;
 }
+
 /* CSS classess */
 /* CSS classes across multiple pages */
 .navbar {
@@ -69,6 +73,7 @@ label {
     font-family: var(--font-default), sans-serif;
     padding: 10px 10px;
   }
+
 
 .btn-default{
     background-color: var(--primary-green); 
@@ -108,12 +113,14 @@ label {
 .form-group{
     margin-bottom: 3rem;
 }
-/* .univest-submit{
-    overflow:hidden;
-	opacity:1;
-	width:200px !important;
-	height:60px;
-} */
+.defactivebtn{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    font-family: (--font-default);
+    background-color: var(--dark-green) ;
+    color: white ;
+}
 
   .range-wrap {
     position: relative;
