@@ -37,8 +37,9 @@ def investor_landing():
         cur.execute("SELECT * FROM isastudent1")
         #allstudents = cur.fetchall()
         #items = make_response(jsonify(items), 200)
-      return render_template('printresults.html', items=items)
-      #return render_template('investor_logged.html', items=items, allstudents=allstudents)
+        #items = jsonify(items)
+      #return render_template('printresults.html', items=items)
+      return render_template('investor_logged.html', items=items)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
 def ISA_form():

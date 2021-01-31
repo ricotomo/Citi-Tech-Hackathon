@@ -39,8 +39,8 @@
         </table>
         <div id = "packages"> </div>
     <script>
-        //var students = "{{items}}";
-        var students = JSON.parse('{{items|tojson}}')
+        //var students = "{{items|tojson}}";
+        var students = JSON.parse('{{items|tojson}}');
         console.log(typeof(students));
         console.log(students);
         var packages = document.getElementById("packages");
@@ -53,7 +53,7 @@
             package.innerHTML = students[i][0];
             packages.appendChild(package);
         }
-        document.getElementById("MyElement").classList.add('MyClass');
+        
     </script>
     </body>
 </html>
