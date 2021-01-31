@@ -1,9 +1,7 @@
 import sqlite3
 from flask import Flask, render_template, flash, redirect, url_for, request
-from config import Config
 
 app = Flask(__name__)
-app.config.from_object(Config)
 app.config["DEBUG"] = True
 
 
