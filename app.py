@@ -2,6 +2,7 @@ import sqlite3, dataset
 from flask import Flask, render_template, flash, redirect, url_for, request, jsonify, make_response
 import numpy as np
 import pickle
+import sklearn
 import pandas as pd
 
 app = Flask(__name__)
@@ -152,6 +153,7 @@ def get_input(sibs, degree, daded, momed, gender, major, diploma, guardian, paru
 
 
 def return_prediction(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol):
+  user_input = get_input(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol)
   data = pd.read_csv("raw_final.csv")
   data = data.append(user_input)
 
