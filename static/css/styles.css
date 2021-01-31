@@ -124,7 +124,7 @@ h4 {
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
   }
-  .container-fluid {
+  .container-fluid-1 {
     padding: 60px 50px;
   }
   .bg-grey {
@@ -188,7 +188,6 @@ h4 {
     background-color: white !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
-    border-color: white;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
