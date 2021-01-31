@@ -26,7 +26,7 @@
                 <th>Student Information</th>
             </tr>
             <tr>
-                
+                <td>{{items}}</td>
                 
             </tr>
             <tr>
@@ -39,16 +39,21 @@
         </table>
         <div id = "packages"> </div>
     <script>
-        var students = JSON.parse('{{items|tojson}}');
-        console.log(students.length);
+        //var students = "{{items}}";
+        var students = JSON.parse('{{items|tojson}}')
+        console.log(typeof(students));
+        console.log(students);
         var packages = document.getElementById("packages");
-        //var package = document.createElement("package")
-        var package = document.querySelector()
+        
+        
         for(var i = 0; i < students.length; i++)
         {
-            package.innerHTML = students[i];
+            var package = document.createElement("div");
+            package.setAttribute("class", "package");
+            package.innerHTML = students[i][0];
             packages.appendChild(package);
         }
+        document.getElementById("MyElement").classList.add('MyClass');
     </script>
     </body>
 </html>

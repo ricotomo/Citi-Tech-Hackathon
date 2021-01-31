@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, flash, redirect, url_for, request, jsonify
+from flask import Flask, render_template, flash, redirect, url_for, request, jsonify, make_response
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -35,9 +35,9 @@ def investor_landing():
         for item in items:
             print(item)
         cur.execute("SELECT * FROM isastudent1")
-        allstudents = cur.fetchall()
-    
-      return render_template('printresults.html', items=items, allstudents=allstudents)
+        #allstudents = cur.fetchall()
+        #items = make_response(jsonify(items), 200)
+      return render_template('printresults.html', items=items)
       #return render_template('investor_logged.html', items=items, allstudents=allstudents)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
