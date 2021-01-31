@@ -1,6 +1,5 @@
 import sqlite3
 from flask import Flask, render_template, flash, redirect, url_for, request
-from forms import SearchForm, LoginForm
 from config import Config
 
 app = Flask(__name__)
@@ -15,15 +14,6 @@ conn.execute('CREATE TABLE IF NOT EXISTS isastudent1 (firstname TEXT, lastname T
 print ("Table created successfully")
 conn.close()
 
-
-@app.route('/login')
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(
-            form.username.data, form.remember_me.data))
-        return redirect('/dashboard')
-    return render_template('login.html', title='Sign In', form=form)
 
 @app.route("/")
 def hello():
