@@ -12,8 +12,8 @@ Submission for the Jan 2021 Citi Tech Hackathon. Univest is a two-sided marketpl
 
 ## Contributors
 
-[@ricotomo](https://github.com/ricotomo)
-[@hayuh](https://github.com/hayuh)
-[@jessmoody](https://github.com/jessmoody)
-[@HexuanZhang-DS](https://github.com/HexuanZhang-DS)
-[@BigJonP](https://github.com/BigJonP)
+#### [@ricotomo](https://github.com/ricotomo)
+#### [@hayuh](https://github.com/hayuh)
+#### [@jessmoody](https://github.com/jessmoody)
+#### [@HexuanZhang-DS](https://github.com/HexuanZhang-DS)
+#### [@BigJonP](https://github.com/BigJonP)
