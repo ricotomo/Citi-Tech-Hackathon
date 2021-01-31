@@ -1,5 +1,6 @@
 import sqlite3
 from flask import Flask, render_template, redirect, url_for, request, g
+
 app = Flask(__name__)
 
 conn = sqlite3.connect('database.db')
@@ -9,7 +10,7 @@ conn.execute('CREATE TABLE IF NOT EXISTS isastudent1 (firstname TEXT, lastname T
 print ("Table created successfully")
 conn.close()
 
-@app.route("/")
+@app.route("/", methods = ['GET'])
 def hello():
   print("Handling request to home page.")
   return render_template('student_homepage.html')
@@ -30,9 +31,9 @@ def ISA_form():
     try:
       print("enter try for DB connection")
       firstname = request.form.get('firstname')
-      print("tuition from form is " + firstname)
+      print("firstname from form is " + firstname)
       lastname = request.form.get('lastname')
-      print("tuition from form is " + lastname)
+      print("lastname from form is " + lastname)
       tuition = request.form.get('tuition')
       print("tuition from form is " + tuition)
       college = request.form.get('college')
