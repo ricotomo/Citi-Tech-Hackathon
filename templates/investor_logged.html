@@ -253,11 +253,11 @@
       </div>
       <div class="form-group">
         <label for="tuition">Tuition Amount</label>
-        <input type="tuition" class="form-control" name="tuition">
+        <input type="tuition" class="form-control" name="tuition" id = "tuition" >
       </div>
       <div class="form-group">
         <label for="major">Major</label>
-        <select class="form-control" name="major">
+        <select class="form-control" name="major" id="major" >
           <option>Select your future major</option>
           <option>Computer science</option>
           <option>Finance</option>
@@ -265,14 +265,14 @@
       </div>
       <div class="form-group">
           <label for="college">College</label>
-          <select class="form-control" name="college">
+          <select class="form-control" name="college" id = "college">
               <option>Select your future college</option>
               <option>University of Florida</option>
               <option>Carnegie Mellon</option>
           </select>
       </div>
       
-      <br><button class="btn btn-default btn-lg">Apply</button>
+      <br><button class="btn btn-default btn-lg" onclick="clicked_apply()">Apply</button>
     </div>
     <div class="col-sm-8">
         <br>
@@ -296,40 +296,50 @@
 
 
 <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+// $(document).ready(function(){
+//   // Add smooth scrolling to all links in navbar + footer link
+//   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+//     // Make sure this.hash has a value before overriding default behavior
+//     if (this.hash !== "") {
+//       // Prevent default anchor click behavior
+//       event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
+//       // Store hash
+//       var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
+//       // Using jQuery's animate() method to add smooth page scroll
+//       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+//       $('html, body').animate({
+//         scrollTop: $(hash).offset().top
+//       }, 900, function(){
    
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
+//         // Add hash (#) to URL when done scrolling (default click behavior)
+//         window.location.hash = hash;
+//       });
+//     } // End if
+//   });
   
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
+//   $(window).scroll(function() {
+//     $(".slideanim").each(function(){
+//       var pos = $(this).offset().top;
 
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
+//       var winTop = $(window).scrollTop();
+//         if (pos < winTop + 600) {
+//           $(this).addClass("slide");
+//         }
+//     });
+//   });
+// })
+function clicked_apply()
+{
+  var tuition_input = document.getElementById("tuition").value;
+  var major_input = document.getElementById("major").value;
+  var college_input = document.getElementById("college").value;
+
+  console.log(tuition_input);
+  console.log(major_input);
+  console.log(college_input);
+}
 </script>
 
 </body>
