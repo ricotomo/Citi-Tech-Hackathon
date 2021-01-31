@@ -1,6 +1,12 @@
 import sqlite3
-from flask import Flask, render_template, redirect, url_for, request, g
+from flask import Flask, render_template, flash, redirect, url_for, request
+from forms import SearchForm, LoginForm
+from config import Config
+
 app = Flask(__name__)
+app.config.from_object(Config)
+app.config["DEBUG"] = True
+
 
 conn = sqlite3.connect('database.db')
 print ("Opened database successfully")
@@ -9,17 +15,38 @@ conn.execute('CREATE TABLE IF NOT EXISTS isastudent1 (firstname TEXT, lastname T
 print ("Table created successfully")
 conn.close()
 
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user {}, remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect('/dashboard')
+    return render_template('login.html', title='Sign In', form=form)
+
 @app.route("/")
 def hello():
   print("Handling request to home page.")
   return render_template('student_homepage.html')
 
-@app.route('/investor_landing',methods = ['GET'])
+@app.route('/investor_landing',methods = ['POST', 'GET'])
 def investor_landing():
    if request.method == 'GET':
       return render_template('investor_logged.html')
-   else:
-      return render_template('student_homepage.html')
+   elif request.method=='POST':
+      college = request.form.get('college')
+      print("college from form is " + college)
+      major = request.form.get('major')
+      print("major from form is " + major) 
+      with sqlite3.connect("database.db") as con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM isastudent1  WHERE college is (?) AND major is (?)", (college, major,))
+        items = cur.fetchall()
+        print("working...")
+        for item in items:
+            print(item)
+      return render_template('printresults.html', items=items)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
 def ISA_form():
@@ -30,9 +57,9 @@ def ISA_form():
     try:
       print("enter try for DB connection")
       firstname = request.form.get('firstname')
-      print("tuition from form is " + firstname)
+      print("first name from form is " + firstname)
       lastname = request.form.get('lastname')
-      print("tuition from form is " + lastname)
+      print("last name from form is " + lastname)
       tuition = request.form.get('tuition')
       print("tuition from form is " + tuition)
       college = request.form.get('college')
@@ -66,6 +93,10 @@ def ISA_form():
         cur.execute("INSERT INTO isastudent1 (firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) )
         con.commit()
         print("record successfully added to DB")
+        # cur.execute("SELECT * FROM isastudent1")
+        # items = cur.fetchall()
+        # for item in items:
+        #     print(item)
     except:
       con.rollback()
       print("exception")
@@ -77,4 +108,4 @@ def ISA_form():
     return render_template('student_homepage.html')
 
 if __name__ == "__main__":
-  app.run()
+    app.run(debug=True)
