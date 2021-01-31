@@ -15,3 +15,5 @@ urllib3==1.26.3
 Werkzeug==1.0.1
 pyodbc==4.0.30
 dataset
+pandas==1.2.0
+numpy==1.19.5 
