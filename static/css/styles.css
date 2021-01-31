@@ -51,7 +51,10 @@ p{
 #button-form-save:hover{
     background-color: var(--dark-blue-green); 
 }
-
+.defactivebtn{
+    background-color: var(--dark-green) !important;
+    color: white;
+}
 /* CSS classess */
 /* CSS classes across multiple pages */
 .navbar {
@@ -63,7 +66,7 @@ p{
     line-height: 1.42857143 !important;
     letter-spacing: 4px;
     border-radius: 0;
-    font-family: Montserrat, sans-serif;
+    font-family: var(--font-default), sans-serif;
     padding: 10px 10px;
   }
 
@@ -72,8 +75,17 @@ p{
     margin-top: 1rem;
     margin-bottom: 2rem;
     border-radius: 10px;
+    font-family: (--font-default);
 }
 .btn-default:hover{
+    background-color: var(--dark-green); 
+    color: white;
+}
+.active{
+    background-color: var(--dark-green); 
+    color: white;
+}
+.btn-default:active{
     background-color: var(--dark-green); 
     color: white;
 }

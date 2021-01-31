@@ -123,19 +123,90 @@
                     </div>
                     <div class="form-group">
                         <label for="tuition">🔎 Verification</label>
-                        <p class = "form-explainer">Verified students have a 22% higher chance of having their tuition funded. If you do recieve funding we will charge a $25 fee for verification. To be verified you need to connect your social media accounts. By doing so you give us permission to mine your data. </p>
-                        <input class="form-control" name="verification">
+                        <p class = "form-explainer">Verified students have a <b>22% higher chance </b>of having their tuition funded. If you do recieve funding we will charge a $25 fee for verification. To be verified you need to connect your social media accounts. By doing so you give us permission to mine your data. </p>
+                        <input type="hidden" id="verification" name="verification" value="0">
+                        <input type="button" class ="btn-default" id="yesbtn" value="Yes, please!">
+                        <input type="button" class ="btn-default defactivebtn" id="nobtn" value="No, thanks">
+                        <script>
+                                document.getElementById("yesbtn").addEventListener("click", function() {
+                                    document.getElementById("verification").value = "1";
+                                    document.getElementById("yesbtn").style.background = "#10999E";
+                                    document.getElementById("yesbtn").style.color = "white";
+                                    document.getElementById("nobtn").style.background = "#30E3CA";
+                                    document.getElementById("nobtn").style.color = "black";
+
+                                });
+                                document.getElementById("nobtn").addEventListener("click", function() {
+                                    document.getElementById("verification").value = "0";
+                                    document.getElementById("nobtn").style.background = "#10999E";
+                                    document.getElementById("nobtn").style.color = "white";
+                                    document.getElementById("yesbtn").style.background = "#30E3CA";
+                                    document.getElementById("yesbtn").style.color = "black";
+                                });
+                        </script>
                       </div>
                       <div class="form-group">
                         <label for="tuition">📦 Package</label>
-                        <p class = "form-explainer">Are you interested in being put in a “package”? With our packages investors can automatically invest in you. You will not have a chance to review the offer. Students who opt to be in packages have a 31% higher chance of having their tuition funded. </p>
-                        <input class="form-control" name="package">
+                        <p class = "form-explainer">Are you interested in being put in a “package”? With our packages investors can automatically invest in you. You will not have a chance to review the offer. Students who opt to be in packages have a <b>31% higher chance </b> of having their tuition funded. </p>
+                        <input type="hidden" id="package" name="package" value="0">
+                        <input type="button" class ="btn-default" id="yesbtn1" value="Yes, please!">
+                        <input type="button" class ="btn-default defactivebtn" id="nobtn1" value="No, thanks">
+                        <script>
+                                document.getElementById("yesbtn1").addEventListener("click", function() {
+                                    document.getElementById("package").value = "1";
+                                    document.getElementById("yesbtn1").style.background = "#10999E";
+                                    document.getElementById("yesbtn1").style.color = "white";
+                                    document.getElementById("nobtn1").style.background = "#30E3CA";
+                                    document.getElementById("nobtn1").style.color = "black";
+
+                                });
+                                document.getElementById("nobtn1").addEventListener("click", function() {
+                                    document.getElementById("verification").value = "0";
+                                    document.getElementById("nobtn1").style.background = "#10999E";
+                                    document.getElementById("nobtn1").style.color = "white";
+                                    document.getElementById("yesbtn1").style.background = "#30E3CA";
+                                    document.getElementById("yesbtn1").style.color = "black";
+                                });
+                        </script>
                       </div>
                       <div class="form-group">
                         <label for="tuition">♀️♂️ Gender</label>
                         <p class = "form-explainer">What gender do you identify as? 
                             Based on this information we may be able to place you in certain packages, for example “women in STEM”. We do not use this data in our prediction  models. Learn more about <a href="https://en.wikipedia.org/wiki/Ethics_of_artificial_intelligence">our ethical AI commitment </a>  </p>
-                        <input class="form-control" name="gender">
+                            <input type="hidden" id="gender" name="gender" value="1">
+                            <input type="button" class ="btn-default" id="femalebtn" value="🚺 Female">
+                            <input type="button" class ="btn-default" id="malebtn" value="🚹 Male">
+                            <input type="button" class ="btn-default" id="otherbtn" value="🚻 Other">
+                            <script>
+                                    document.getElementById("femalebtn").addEventListener("click", function() {
+                                        document.getElementById("gender").value = "0";
+                                        document.getElementById("femalebtn").style.background = "#10999E";
+                                        document.getElementById("femalebtn").style.color = "white";
+                                        document.getElementById("malebtn").style.background = "#30E3CA";
+                                        document.getElementById("malebtn").style.color = "black";
+                                        document.getElementById("otherbtn").style.background = "#30E3CA";
+                                        document.getElementById("otherbtn").style.color = "black";
+    
+                                    });
+                                    document.getElementById("malebtn").addEventListener("click", function() {
+                                        document.getElementById("gender").value = "1";
+                                        document.getElementById("malebtn").style.background = "#10999E";
+                                        document.getElementById("malebtn").style.color = "white";
+                                        document.getElementById("femalebtn").style.background = "#30E3CA";
+                                        document.getElementById("femalebtn").style.color = "black";
+                                        document.getElementById("otherbtn").style.background = "#30E3CA";
+                                        document.getElementById("otherbtn").style.color = "black";
+                                    });
+                                    document.getElementById("otherbtn").addEventListener("click", function() {
+                                        document.getElementById("gender").value = "2";
+                                        document.getElementById("otherbtn").style.background = "#10999E";
+                                        document.getElementById("otherbtn").style.color = "white";
+                                        document.getElementById("femalebtn").style.background = "#30E3CA";
+                                        document.getElementById("femalebtn").style.color = "black";
+                                        document.getElementById("malebtn").style.background = "#30E3CA";
+                                        document.getElementById("malebtn").style.color = "black";
+                                    });
+                            </script>
                       </div>
                       <div class="form-group">
                         <label for="momed">👩‍👩‍👦 One Big Happy Family</label>
@@ -186,8 +257,8 @@
                         <p class = "form-explainer">What do you want investors to know about you? </p>
                         <input type="text" class="form-control" placeholder="Don't be shy..." name="msg">
                     </div>
-                    <button class="btn btn-default" id="button-form-save">Save for later</button>
                     <button type="submit" class="btn btn-default univest-submit">Apply</button>
+                    <button class="btn btn-default" id="button-form-save" onclick = "location.href = '/'">Save for later</button>
                   </form> 
             </div>      
             <div class="col-sm-3">
