@@ -85,7 +85,7 @@ def ISA_form():
       pol = request.form.get('pol')
       print("politics from form is " + pol)
       msg = request.form.get('msg')
-      print("degree from form is " + msg)
+      print("message from form is " + msg)
       #print message for testing purposes. Does not work! Causes an exception!
       #print("testing form elements " + firstname + " " + lastname + " " + tuition + " " + college + " " +major + " " +degree + " " +verification + " " +package + " " +gender + " " +momed + " " +daded + " " +parusa + " " +granusa + " " +pol + " " +msg)
       with sqlite3.connect("database.db") as con:
