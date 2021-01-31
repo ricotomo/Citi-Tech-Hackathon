@@ -1,17 +1,51 @@
+/* CSS HTML elements */
 body {
     font-family: Montserrat;
+    padding-top: 90px;
   }
-#form-header{
-    font-family:Montserrat;
-    font-weight:bold;
-    color: #10999E;
-    font-size: 24x;
-    text-align: center;
+p{
+    font-family: Montserrat;
 }
+
   label {
     font-family:Montserrat;
     font-weight:bold;
     color: #10999E;
-    font-size: 24x;
+    font-size: 24px;
+  }
+/* CSS classes */
+/* CSS classes across multiple pages */
+
+/* student_homepage CSS classes */
+/* investor_logged CSS classes */
+/* ISA_forms CSS classes */
+#form-header{
+    font-family:Montserrat;
+    font-weight:bold;
+    color: #10999E;
+    font-size: 36px;
+    text-align: center;
+}
+
+#form-explainer{
+    font-size: 18px;
+}
+
+/* CSS IDs */
+/* CSS IDs across multiple pages */
+.navbar {
+    margin-bottom: 0;
+    background-image: linear-gradient(to right, #30e3ca ,#30e3ca, #10999E);
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+    padding: 10px 10px;
   }
 
+/* student_homepage CSS IDs */
+/* investor_logged CSS IDs */
+/* ISA_forms CSS IDs */

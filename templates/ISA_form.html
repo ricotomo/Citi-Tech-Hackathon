@@ -5,7 +5,7 @@
     <title>Citi ISA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -14,21 +14,17 @@
 </head>
 <body>
     <!--navbar-->
-    <nav class="navbar navbar-default">
-        <!--container fluid used to always use full screen width-->
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Univest</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
-        </div>
-      </nav>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <!--container fluid used to always use full screen width-->
+            <div class="container-fluid" >
+              <div class="navbar-header">                    
+                <img width = "80" height = "80" top = "42" left = "26" src = "https://s3-alpha-sig.figma.com/img/b228/dc65/302cb31945084b3fc34fb2c059cb6c70?Expires=1612742400&Signature=IF~D7kT9PYawp-MSTg0HeapGKEdS9pg~kgHINJYPxxeBTXDvCmNHb9Gwt7gDLXThstrVcpMsUPJFH0rBccdTXDksyyjC4Q2t92MkEwLTI6FJmtRohtOCqtqOD6a84FU2MHgfgq3sFSi3BAhE04wPXcTZkDx9NJTRW932ftPpu34vV78ziz3r2VkYUzTXniHSuXxKDn~Jexx28zVZCHTroiQaM4bwBvZxawIYMlF06KHsOXXv5idGlrZmeGXK1TGQ1c4NAFF7Kxq~ebTGEowDfn0UYxFez7rGEffB8b7QHQONsNbzOm6DNuICattObco-t6yB~Tf1A93OYnFez7okQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+                <img width = "281" height = "78" top = "30" left = "162" src = "https://s3-alpha-sig.figma.com/img/f423/90e9/db28f3bcd62b23703bdc7ad6fdadd302?Expires=1612742400&Signature=hbtVNKB5bTRmV24ZsYtk~p8OsuJzTxwubqFEoCBtS01QRd~kgCtO2mOaVzNSfIQcu9Kis6sk9DZpKJ7WL0ddZ-1IOt7fzvjvDC59VXDuC~ceVboDwIZPWjjKOPfwM5-JyGH~YwB8d6Hi2kIpPG5xAvxh-pCk5S~IRjjdgImmFUGFDcpF29jtX3TjKF~NSl0MOIWHKh1Ksq3fV2abYPgIw-5cglrSaas0KuqL5X~ClCT2CwEfnQiWEjAcnaXQ~D7eJ7VcZcaqsS2jV3oiQ68sQk3GKaOnCef~d~72TGZ2nFoiHraWZjOxhwzls57i11rp9SLfa6wIrKn19keM7tkEvg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+              </div>
+          </nav>
       <!--Bootstrap grids-->
       <!--container fluid used to always use full screen width-->
-      <div class="container-fluid">
+      <div class="container-fluid top-element-under-nav">
         <!--one row with three columns-->
         <div class="row">
             <!--use small column settings because bootstrap automatically scales up but not down-->
@@ -40,13 +36,14 @@
             </br>
                 <form action="" method="post">
                     <div class="form-group">
-                        <label for="tuition">🤳  Tell Us About Yourself</label>
+                        <label for="tuition">🤳  It's All About You</label>
                         <input type="firstname" class="form-control" placeholder="Your first name" name="firstname">
                     </br>
                         <input type="lastname" class="form-control" placeholder="Your last name" name="lastname">
                       </div>
                     <div class="form-group">
                       <label for="tuition">🤑 Tuition Amount</label>
+                      <p class = "form-explainer">How much money do you need? </p>
                       <input type="tuition" class="form-control" name="tuition">
                     </div>
                     <div class="form-group">
