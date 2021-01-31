@@ -8,7 +8,7 @@ app.config["DEBUG"] = True
 conn = sqlite3.connect('database.db')
 print ("Opened database successfully")
 #use SQLite implicit rowid primary key instead of creating our own
-conn.execute('CREATE TABLE IF NOT EXISTS isastudent1 (firstname TEXT, lastname TEXT, tuition TEXT, major TEXT, college TEXT, degree TEXT, verification INTEGER, package INTEGER, gender INTEGER, momed TEXT, daded TEXT, parusa INTEGER, granusa INTEGER, pol TEXT, msg TXT)')
+conn.execute('CREATE TABLE IF NOT EXISTS isastudent2 (firstname TEXT, lastname TEXT, tuition TEXT, dipged TEXT, college TEXT, major TEXT, degree TEXT, verification INTEGER, package INTEGER, gender TEXT, momed TEXT, daded TEXT, sibs TEXT, family16 TEXT, parusa TEXT, granusa TEXT, pol TEXT, msg TXT)')
 print ("Table created successfully")
 conn.close()
 
@@ -53,6 +53,8 @@ def ISA_form():
       print("lastname from form is " + lastname)
       tuition = request.form.get('tuition')
       print("tuition from form is " + tuition)
+      dipged = request.form.get('dipged')
+      print("dipged from form is " + dipged)
       college = request.form.get('college')
       print("college from form is " + college)
       major = request.form.get('major')
@@ -69,6 +71,10 @@ def ISA_form():
       print("momed from form is " + momed)
       daded = request.form.get('daded')
       print("daded from form is " + daded)
+      sibs = request.form.get('sibs')
+      print("sibs from form is " + sibs)
+      family16 = request.form.get('family16')
+      print("family16 from form is " + family16)
       parusa = request.form.get('parusa')
       print("parusa from form is " + parusa)
       granusa = request.form.get('granusa')
@@ -81,7 +87,7 @@ def ISA_form():
       #print("testing form elements " + firstname + " " + lastname + " " + tuition + " " + college + " " +major + " " +degree + " " +verification + " " +package + " " +gender + " " +momed + " " +daded + " " +parusa + " " +granusa + " " +pol + " " +msg)
       with sqlite3.connect("database.db") as con:
         cur = con.cursor()
-        cur.execute("INSERT INTO isastudent1 (firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) )
+        cur.execute("INSERT INTO isastudent2 (firstname, lastname, tuition, dipged, college, major, degree, verification, package, gender, momed, daded, sibs, family16, parusa, granusa, pol, msg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(firstname, lastname, tuition, dipged, college, major, degree, verification, package, gender, momed, daded, sibs, family16, parusa, granusa, pol, msg) )
         con.commit()
         print("record successfully added to DB")
         # cur.execute("SELECT * FROM isastudent1")

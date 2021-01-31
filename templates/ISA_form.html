@@ -77,21 +77,28 @@
                       <p class = "form-explainer">What will you be studying? Refer to the <a href="http://www.act.org/content/act/en/research/reports/act-publications/college-choice-report-class-of-2013/college-majors-and-occupational-choices/college-majors-and-occupational-choices.html">ACT majors list</a></p>
                       <select class="form-control" name="major">
                         <option value="" disabled selected>Select a field</option>
-                        <option>AGRICULTURE & NATURAL RESOURCES CONSERVATION</option>
-                        <option>ARCHITECTURE</option>
-                        <option>AREA, ETHNIC, & MULTIDISCIPLINARY STUDIES</option>
-                        <option>ARTS: VISUAL & PERFORMING</option>
-                        <option>BUSINESS</option>
-                        <option>COMMUNICATIONS</option>
-                        <option>COMMUNITY, FAMILY, & PERSONAL SERVICES</option>
-                        <option>COMPUTER SCIENCE & MATHEMATICS</option>
+                        <option>ART</option>
+                        <option>BUSINESS ADMINISTRATION</option>
+                        <option>COMPUTER SCIENCE</option>
                         <option>EDUCATION</option>
                         <option>ENGINEERING</option>
-                        <option>ENGLISH & FOREIGN LANGUAGES</option>
-                        <option>HEALTH ADMINISTRATION & ASSISTING</option>
-                        <option>OTHER</option>
+                        <option>HEALTH</option>
+                        <option>LAW</option>
+                        <option>NURSING</option>
+                        <option>PSYCHOLOGY</option>
                       </select>
                     </div>
+                    <div class="form-group">
+                      <label for="High School">🎒 High School</label>
+                      <p class = "form-explainer">What diploma was or will be awarded to you by your high school? </p>
+                      <select class="form-control" name="dipged">
+                          <option value="" disabled selected>Select your degree type</option>
+                          <option>High school diploma</option>
+                          <option>GED</option>
+                          <option>HS diploma after post HS classes</option>
+                          <option>Other</option>
+                      </select>
+                  </div>
                     <div class="form-group">
                         <label for="college">🏫 College</label>
                         <p class = "form-explainer">What school will you be attending? </p>
@@ -116,13 +123,9 @@
                         <p class = "form-explainer">What type of degree will you have when your done? </p>
                         <select class="form-control" name="degree">
                             <option value="" disabled selected>Select your degree type</option>
-                            <option>ASSOCIATE (2 yr)</option>
-                            <option>BACHELOR (3 yr)</option>
-                            <option>BACHELOR (4 yr)</option>
-                            <option>GRADUATE (1 yr)</option>
-                            <option>GRADUATE (2+ yr)</option>
-                            <option>PHD</option>
-                            <option>MD</option>
+                            <option>JUNIOR COLLEGE</option>
+                            <option>BACHELOR</option>
+                            <option>GRADUATE</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -183,7 +186,7 @@
                             <input type="button" class ="btn-default" id="otherbtn" value="🚻 Other">
                             <script>
                                     document.getElementById("femalebtn").addEventListener("click", function() {
-                                        document.getElementById("gender").value = "0";
+                                        document.getElementById("gender").value = "FEMALE";
                                         document.getElementById("femalebtn").style.background = "#10999E";
                                         document.getElementById("femalebtn").style.color = "white";
                                         document.getElementById("malebtn").style.background = "#30E3CA";
@@ -193,7 +196,7 @@
     
                                     });
                                     document.getElementById("malebtn").addEventListener("click", function() {
-                                        document.getElementById("gender").value = "1";
+                                        document.getElementById("gender").value = "MALE";
                                         document.getElementById("malebtn").style.background = "#10999E";
                                         document.getElementById("malebtn").style.color = "white";
                                         document.getElementById("femalebtn").style.background = "#30E3CA";
@@ -202,7 +205,7 @@
                                         document.getElementById("otherbtn").style.color = "black";
                                     });
                                     document.getElementById("otherbtn").addEventListener("click", function() {
-                                        document.getElementById("gender").value = "2";
+                                        document.getElementById("gender").value = "MALE";
                                         document.getElementById("otherbtn").style.background = "#10999E";
                                         document.getElementById("otherbtn").style.color = "white";
                                         document.getElementById("femalebtn").style.background = "#30E3CA";
@@ -217,33 +220,57 @@
                         <p class = "form-explainer">What is the highest level of education your parents achieved? </p>
                         <select class="form-control" name="momed">
                             <option value="" disabled selected>Mom's education</option>
-                            <option>GED</option>
-                            <option>High School</option>
-                            <option>Some university</option>
-                            <option>Associate</option>
-                            <option>Bachelor's</option>
-                            <option>Master</option>
-                            <option>PhD</option>
+                            <option>LT HIGH SCHOOL</option>
+                            <option>HIGH SCHOOL</option>
+                            <option>JUNIOR COLLEGE</option>
+                            <option>BACHELOR</option>
+                            <option>GRADUATE</option>
                         </select>
                     </br> 
                         <select class="form-control" name="daded">
                             <option value="" disabled selected>Dad's Education</option>
-                            <option>GED</option>
-                            <option>High School</option>
-                            <option>Some university</option>
-                            <option>Associate</option>
-                            <option>Bachelor's</option>
-                            <option>Master</option>
-                            <option>PhD</option>
+                            <option>LT HIGH SCHOOL</option>
+                            <option>HIGH SCHOOL</option>
+                            <option>JUNIOR COLLEGE</option>
+                            <option>BACHELOR</option>
+                            <option>GRADUATE</option>
                         </select>
+                      </br> 
+                      <select class="form-control" name="sibs">
+                        <option value="" disabled selected>How many siblings do you have?</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                    </br> 
+                    <select class="form-control" name="family16">
+                      <option value="" disabled selected>Who did you live with at 16?</option>
+                      <option>MOTHER & FATHER</option>
+                      <option>MOTHER</option>
+                      <option>MOTHER & STPFATHER</option>
+                      <option>FATHER</option>
+                      <option>FATHER & STPMOTHER</option>
+                      <option>FEMALE RELATIVE</option>
+                      <option>MALE RELATIVE</option>
+                      <option>M AND F RELATIVES</option>
+                      <option>OTHER</option>
+                  </select>
                     </div>
                     <div class="form-group">
                         <label>🎶 🎤 Born in the USA</label>
                         <p class = "form-explainer">How many of your parents and gradparents where born in the USA? </p>
                         <select class="form-control" name="parusa">
                             <option value="" disabled selected>Where 1 or both of your parents born in the USA?</option>
-                            <option>1</option>
-                            <option>2</option>
+                            <option>BOTH IN U.S</option>
+                            <option>NEITHER IN U.S</option>
+                            <option>FATHER ONLY</option>
+                            <option>MOTHER ONLY</option>
+                            <option>MOTHER; FA. DK</option>
+                            <option>NOT FATHER;MO.DK</option>
+                            <option>NOT MOTHER;FA.DK</option>
+                            <option>DK FOR BOTH</option>
                         </select>
                         </br>
                         <select class="form-control" name="granusa">
@@ -252,6 +279,7 @@
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
+                            <option>ALL IN U.S</option>
                         </select>
                     </div>
                     </br>
@@ -259,7 +287,7 @@
                         <label for="degree">🗳 Politics</label>
                         <p class = "form-explainer">How would you describe your political views? </p>
                         <div class="range-wrap">
-                            <input type="range" class="slider" name="pol" id="pol" min="1" max="5" step="1">
+                            <input type="range" class="slider" name="pol" id="pol" min="1" max="7" step="1">
                             <p class = "form-explainer" style="margin-top: 2rem;">Value: <span id="rangeout1"></span></p>
                         </div>
                         <script>
@@ -273,27 +301,25 @@
 
                             function polView(){
                                 if (slider.value == "1") {
-                                    return "Very liberal"
+                                    return "EXTREMELY LIBERAL"
                                 } else if (slider.value == "2") {
-                                    return "Liberal"
+                                    return "LIBERAL"
                                 } else if (slider.value == "3") {
-                                    return "Center"
+                                    return "SLIGHTLY LIBERAL"
                                 } else if (slider.value == "4") {
-                                    return "Conservative"
+                                    return "MODERATE"
                                 } else if (slider.value == "5") {
-                                    return "Very conservative"
-                                } else {
+                                    return "SLIGHTLY CONSERVATIVE"
+                                } else if (slider.value == "6") {
+                                    return "CONSERVATIVE"
+                                } else if (slider.value == "7") {
+                                    return "EXTRMLY CONSERVATIVE"
+                                  } else {
                                     return "Underfined"
                                 }   
                             }
 
                             
-                            
-
-                            // Update the current slider value (each time you drag the slider handle)
-                            // slider.oninput = function() {
-                            // output.innerHTML = this.value;
-                            // } 
                         </script>
                     <div class="form-group">
                         <label> ✍🏼 Message to Investors</label>
