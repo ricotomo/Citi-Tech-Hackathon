@@ -3,6 +3,15 @@
     <head>
         <meta charset = "UTF-8" />
         <title>Welcome to UNIvest</title>
+        <style>
+            .package {
+            border-radius: 25px;
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+            height: 200px;
+            }
+        </style>
         
     </head>
     <body>
@@ -17,10 +26,29 @@
                 <th>Student Information</th>
             </tr>
             <tr>
-                <td>{{items}}</td>
+                
+                
+            </tr>
+            <tr>
+                
+
+                
+                
             </tr>
             
         </table>
-        
+        <div id = "packages"> </div>
+    <script>
+        var students = JSON.parse('{{items|tojson}}');
+        console.log(students.length);
+        var packages = document.getElementById("packages");
+        //var package = document.createElement("package")
+        var package = document.querySelector()
+        for(var i = 0; i < students.length; i++)
+        {
+            package.innerHTML = students[i];
+            packages.appendChild(package);
+        }
+    </script>
     </body>
 </html>

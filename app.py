@@ -34,7 +34,11 @@ def investor_landing():
         print("working...")
         for item in items:
             print(item)
-      return render_template('printresults.html', items=items)
+        cur.execute("SELECT * FROM isastudent1")
+        allstudents = cur.fetchall()
+    
+      return render_template('printresults.html', items=items, allstudents=allstudents)
+      #return render_template('investor_logged.html', items=items, allstudents=allstudents)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
 def ISA_form():
