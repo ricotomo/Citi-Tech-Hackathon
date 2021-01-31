@@ -1,28 +1,40 @@
+/* color and font variable */
+
+:root {
+    --primary-green: #30E3CA;
+    /* access using var(--primary-green)*/
+    --dark-green: #10999E;
+    --light-green: #E4F9F5;
+    --dark-blue-green: #40514E;
+    --secondary-orange: #F9A828;
+    --font-default: Montserrat;
+  }
+
 /* CSS HTML elements */
 body {
-    font-family: Montserrat;
+    font-family: var(--font-default);
     padding-top: 90px;
   }
 p{
-    font-family: Montserrat;
+    font-family: var(--font-default);
 }
 
   label {
-    font-family:Montserrat;
+    font-family: var(--font-default);
     font-weight:bold;
-    color: #10999E;
+    color: var(--dark-green);
     font-size: 24px;
   }
-/* CSS classes */
-/* CSS classes across multiple pages */
+/* CSS IDs */
+/* CSS IDs across multiple pages */
 
-/* student_homepage CSS classes */
-/* investor_logged CSS classes */
-/* ISA_forms CSS classes */
+/* student_homepage CSS IDs */
+/* investor_logged CSS IDs */
+/* ISA_forms CSS IDs */
 #form-header{
     font-family:Montserrat;
     font-weight:bold;
-    color: #10999E;
+    color: var(--dark-green);
     font-size: 36px;
     text-align: center;
 }
@@ -31,11 +43,20 @@ p{
     font-size: 18px;
 }
 
-/* CSS IDs */
-/* CSS IDs across multiple pages */
+#button-form-save{
+    margin-right: 2rem;
+    background-color: var(--dark-green); 
+    color: white;
+}
+#button-form-save:hover{
+    background-color: var(--dark-blue-green); 
+}
+
+/* CSS classess */
+/* CSS classes across multiple pages */
 .navbar {
     margin-bottom: 0;
-    background-image: linear-gradient(to right, #30e3ca ,#30e3ca, #10999E);
+    background-image: linear-gradient(to right, var(--primary-green) ,var(--primary-green), var(--dark-green));
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -46,6 +67,72 @@ p{
     padding: 10px 10px;
   }
 
-/* student_homepage CSS IDs */
-/* investor_logged CSS IDs */
-/* ISA_forms CSS IDs */
+.btn-default{
+    background-color: var(--primary-green); 
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+.btn-default:hover{
+    background-color: var(--dark-green); 
+    color: white;
+}
+
+/* student_homepage CSS classes */
+/* investor_logged CSS classes */
+/* ISA_forms CSS classes */
+.form-header{
+    font-family:Montserrat;
+    font-weight:bold;
+    color: #10999E;
+    font-size: 36px;
+    text-align: center;
+}
+
+.form-explainer{
+    font-size: 18px;
+}
+
+.form-group{
+    margin-bottom: 3rem;
+}
+/* .univest-submit{
+    overflow:hidden;
+	opacity:1;
+	width:200px !important;
+	height:60px;
+} */
+
+  .range-wrap {
+    position: relative;
+    margin: 0 auto 3rem;
+  } 
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;  
+    background: #666666;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%; 
+    background: var(--primary-green);
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    cursor: pointer;
+  }
