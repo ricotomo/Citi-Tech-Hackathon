@@ -275,16 +275,23 @@
           </select>
       </div>
       
-      <br><button type="submit" class="btn btn-default btn-lg">Apply</button>
+      <br><button type="submit" class="btn btn-default btn-lg" onclick = clicked_apply()>Apply</button>
       </form>
     </div>
 
     <div class="col-sm-8">
         <br>
         <h2>Income Share Opportunities</h2>
-        <div class="package" style="height:200px;">Package</div><br>
-    
-        <div class="package" style="height:200px;">Package</div>
+        <div id = "packages"> </div>
+        {% for student in items %}
+        <div class = "package">
+          <h2>{{ student[0] }} {{student[1]}}</h2><br>
+          <h4>Tuition: ${{student[2]}}</h4><br>
+          <h4>Major: {{student[3]}}</h4><br>
+          <h4>College: ${{student[4]}}</h4><br>
+        </div><br>
+        {% endfor %}  
+        
     </div>
   </div>
 </div>
@@ -318,6 +325,7 @@ $(document).ready(function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
+        
       });
     } // End if
   });
@@ -336,9 +344,13 @@ $(document).ready(function(){
 
 
 
+      
+
+
 
 </script>
-<script type="text/javascript" src="investor_logged.js"></script>
+
+
 </body>
 </html>
 
