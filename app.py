@@ -1,5 +1,7 @@
 import sqlite3, dataset
 from flask import Flask, render_template, flash, redirect, url_for, request, jsonify, make_response
+import numpy as np
+import pandas as pd
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -11,6 +13,11 @@ print ("Opened database successfully")
 conn.execute('CREATE TABLE IF NOT EXISTS isastudent2 (firstname TEXT, lastname TEXT, tuition TEXT, dipged TEXT, college TEXT, major TEXT, degree TEXT, verification INTEGER, package INTEGER, gender TEXT, momed TEXT, daded TEXT, sibs TEXT, family16 TEXT, parusa TEXT, granusa TEXT, pol TEXT, msg TXT)')
 print ("Table created successfully")
 conn.close()
+
+#Getting the model
+with open("model_pickle", "rb") as f:
+  model = pickle.load(f)
+
 
 @app.route("/", methods = ['GET'])
 def hello():
@@ -134,6 +141,65 @@ def ISA_form():
       con.close()
   else:
     return render_template('student_homepage.html')
+
+
+
+#Handling request
+def get_input(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol):
+  input_array = np.array([[sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol, np.nan]])
+    return pd.DataFrame(input_array, columns=['SIBS', 'DEGREE', 'PADEG', 'MADEG', 'SEX', 'MAJOR1', 'DIPGED', 'FAMILY16', 'PARBORN', 'GRANBORN', 'POLVIEWS', 'INCOME'])
+
+
+def return_prediction(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol):
+  data = pd.read_csv("raw_final.csv")
+  data = data.append(user_input)
+
+  data_final = pd.get_dummies(data.drop(columns=["SIBS", "INCOME"]))
+  data_final["SIBS"] = data["SIBS"]
+
+  data_final = data_final[['SIBS', 'DEGREE_BACHELOR', 'DEGREE_GRADUATE', 'DEGREE_HIGH SCHOOL', 'DEGREE_JUNIOR COLLEGE',
+                           'PADEG_BACHELOR', 'PADEG_GRADUATE', 'PADEG_HIGH SCHOOL', 'PADEG_JUNIOR COLLEGE', 'PADEG_LT HIGH SCHOOL',
+                           'MADEG_BACHELOR', 'MADEG_GRADUATE', 'MADEG_HIGH SCHOOL', 'MADEG_JUNIOR COLLEGE', 'MADEG_LT HIGH SCHOOL',
+                           'SEX_FEMALE', 'SEX_MALE', 'MAJOR1_ACCOUNTING/BOOKKEEPING', 'MAJOR1_ADVERTISING', 'MAJOR1_AGRICULTURE/HORTICULTURE',
+                           'MAJOR1_ALLIED HEALTH', 'MAJOR1_ANTHROPOLGY', 'MAJOR1_ARCHITECTURE', 'MAJOR1_ART',
+                           'MAJOR1_Administrative Science/Public Administration', 'MAJOR1_Aviation/Aeronatics', 'MAJOR1_BIOLOGY',
+                           'MAJOR1_BUSINESS ADMINISTRATION', 'MAJOR1_CHEMISTRY', 'MAJOR1_COMM. DISORDERS', 'MAJOR1_COMMUNICATIONS/SPEECH',
+                           'MAJOR1_COMPUTER SCIENCE', 'MAJOR1_Child/Human/Family Development', 'MAJOR1_Counseling',
+                           'MAJOR1_Criminology/Criminal Justice', 'MAJOR1_DENTISTRY', 'MAJOR1_Dance', 'MAJOR1_ECONOMICS',
+                           'MAJOR1_EDUCATION', 'MAJOR1_ENGINEERING', 'MAJOR1_ENGLISH', 'MAJOR1_Educational administration',
+                           'MAJOR1_Electronics', 'MAJOR1_Environmental Science/Ecology', 'MAJOR1_Ethnic studies', 'MAJOR1_FINANCE',
+                           'MAJOR1_FOREIGN LANGUAGE', 'MAJOR1_FORESTRY', 'MAJOR1_Fashion', 'MAJOR1_Fine Arts',
+                           'MAJOR1_Food Science/Nutrition/Culinary Arts', 'MAJOR1_GENERAL SCIENCES', 'MAJOR1_GENERAL STUDIES', 'MAJOR1_GEOGRAPHY',
+                           'MAJOR1_GEOLOGY', 'MAJOR1_Gerontology', 'MAJOR1_HEALTH', 'MAJOR1_HISTORY', 'MAJOR1_Human Services/Human Resources',
+                           'MAJOR1_INDUSTRY & TECHN', 'MAJOR1_Industrial Relations', 'MAJOR1_Information technology', 'MAJOR1_JOURNALISM',
+                           'MAJOR1_LAW', 'MAJOR1_LAW ENFORCEMENT', 'MAJOR1_LIBERAL ARTS', 'MAJOR1_LIBRARY SCIENCE', 'MAJOR1_MARKETING',
+                           'MAJOR1_MATHMATICS', 'MAJOR1_MEDICINE', 'MAJOR1_MUSIC', 'MAJOR1_Mechanics/Machine Trade', 'MAJOR1_NURSING',
+                           'MAJOR1_OTHER', 'MAJOR1_OTHER VOCATIONAL', 'MAJOR1_PHARMACY', 'MAJOR1_PHILOSOPHY', 'MAJOR1_PHYSICAL EDUCATION',
+                           'MAJOR1_PHYSICS', 'MAJOR1_POLITICAL SCIENCE/INTERNATIONAL RELATIONS', 'MAJOR1_PSYCHOLOGY', 'MAJOR1_Parks and Recreation',
+                           'MAJOR1_Public Relations', 'MAJOR1_SOCIAL WORK', 'MAJOR1_SOCIOLOGY', 'MAJOR1_SPECIAL EDUCATION', 'MAJOR1_Social Sciences',
+                           'MAJOR1_Statistics/Biostatistics', 'MAJOR1_THEATER ARTS', 'MAJOR1_THEOLOGY', 'MAJOR1_Television/Film', 'MAJOR1_Textiles/Cloth',
+                           'MAJOR1_Urban and Regional Planning', 'MAJOR1_VETERINARY MEDICINE', 'MAJOR1_Visual Arts/Graphic Design/Design and Drafting',
+                           'DIPGED_GED', 'DIPGED_HS diploma after post HS classes', 'DIPGED_High School diploma', 'DIPGED_Other', 'FAMILY16_FATHER',
+                           'FAMILY16_FATHER & STPMOTHER', 'FAMILY16_FEMALE RELATIVE', 'FAMILY16_M AND F RELATIVES', 'FAMILY16_MALE RELATIVE',
+                           'FAMILY16_MOTHER', 'FAMILY16_MOTHER & FATHER', 'FAMILY16_MOTHER & STPFATHER', 'FAMILY16_OTHER', 'PARBORN_BOTH IN U.S',
+                           'PARBORN_DK FOR BOTH', 'PARBORN_FATHER ONLY', 'PARBORN_MOTHER ONLY', 'PARBORN_MOTHER; FA. DK', 'PARBORN_NEITHER IN U.S',
+                           'PARBORN_NOT FATHER;MO.DK', 'PARBORN_NOT MOTHER;FA.DK', 'GRANBORN_1.0', 'GRANBORN_2.0', 'GRANBORN_3.0', 'GRANBORN_4.0',
+                           'GRANBORN_ALL IN U.S', 'POLVIEWS_CONSERVATIVE', 'POLVIEWS_EXTREMELY LIBERAL', 'POLVIEWS_EXTRMLY CONSERVATIVE', 'POLVIEWS_LIBERAL',
+                           'POLVIEWS_MODERATE', 'POLVIEWS_SLGHTLY CONSERVATIVE', 'POLVIEWS_SLIGHTLY LIBERAL']]
+
+  return model.predict(data_final.tail(1))
+
+def return_ROI(pred)
+    duration = 10
+    interest = 0.25
+
+    if pred < 30000:
+      duration = 15
+
+    if tuition > 100000:
+      interest = 0.3
+
+    return (((duration*interest) - tuition) / tuition) * 100
 
 if __name__ == "__main__":
     app.run(debug=True)
