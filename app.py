@@ -9,7 +9,7 @@ conn.execute('CREATE TABLE IF NOT EXISTS isastudent1 (firstname TEXT, lastname T
 print ("Table created successfully")
 conn.close()
 
-@app.route("/")
+@app.route("/", methods = ['GET'])
 def hello():
   print("Handling request to home page.")
   return render_template('student_homepage.html')
