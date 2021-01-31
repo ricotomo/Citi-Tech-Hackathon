@@ -124,7 +124,7 @@ h4 {
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
   }
-  .container-fluid {
+  .container-fluid-1 {
     padding: 60px 50px;
   }
   .bg-grey {
@@ -169,9 +169,11 @@ h4 {
     font-style: normal;
   }
   .panel {
-    border: 1px solid #30e3ca; 
-    border-radius:0 !important;
+    border: none; 
+    height: 150px;
     transition: box-shadow 0.5s;
+    margin-top: 4rem;
+    
   }
   .panel:hover {
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
@@ -209,7 +211,9 @@ h4 {
   .navbar-homepage {
    
     font-family: var(--font-default), sans-serif;
-    padding: 10px 10px;
+    padding: 25px 10px 10px 10px;
+    margin-left:2rem;
+    margin-right: 2rem;
     margin-bottom: 0;
     background-color: white !important;
     z-index: 9999;
