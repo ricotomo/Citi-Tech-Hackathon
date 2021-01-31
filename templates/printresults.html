@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8" />
+        <title>Welcome to UNIvest</title>
+        <style>
+            .package {
+            border-radius: 25px;
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+            height: 200px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div>
+            UNIvest:
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </div>
+        <hr>
+        <table>
+            <tr>
+                <th>Student Information</th>
+            </tr>
+            <tr>
+                <td>{{items}}</td>
+                
+            </tr>
+            <tr>
+                
+
+                
+                
+            </tr>
+            
+        </table>
+        <div id = "packages"> </div>
+    <script>
+        //var students = "{{items}}";
+        var students = JSON.parse('{{items|tojson}}')
+        console.log(typeof(students));
+        console.log(students);
+        var packages = document.getElementById("packages");
+        
+        
+        for(var i = 0; i < students.length; i++)
+        {
+            var package = document.createElement("div");
+            package.setAttribute("class", "package");
+            package.innerHTML = students[i][0];
+            packages.appendChild(package);
+        }
+        document.getElementById("MyElement").classList.add('MyClass');
+    </script>
+    </body>
+</html>

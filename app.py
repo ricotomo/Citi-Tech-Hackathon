@@ -1,7 +1,9 @@
 import sqlite3
-from flask import Flask, render_template, redirect, url_for, request, g
+from flask import Flask, render_template, flash, redirect, url_for, request, jsonify, make_response
 
 app = Flask(__name__)
+app.config["DEBUG"] = True
+
 
 conn = sqlite3.connect('database.db')
 print ("Opened database successfully")
@@ -15,12 +17,27 @@ def hello():
   print("Handling request to home page.")
   return render_template('student_homepage.html')
 
-@app.route('/investor_landing',methods = ['GET'])
+@app.route('/investor_landing',methods = ['POST', 'GET'])
 def investor_landing():
    if request.method == 'GET':
       return render_template('investor_logged.html')
-   else:
-      return render_template('student_homepage.html')
+   elif request.method=='POST':
+      college = request.form.get('college')
+      print("college from form is " + college)
+      major = request.form.get('major')
+      print("major from form is " + major) 
+      with sqlite3.connect("database.db") as con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM isastudent1  WHERE college is (?) AND major is (?)", (college, major,))
+        items = cur.fetchall()
+        print("working...")
+        for item in items:
+            print(item)
+        cur.execute("SELECT * FROM isastudent1")
+        #allstudents = cur.fetchall()
+        #items = make_response(jsonify(items), 200)
+      return render_template('printresults.html', items=items)
+      #return render_template('investor_logged.html', items=items, allstudents=allstudents)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
 def ISA_form():
@@ -59,7 +76,7 @@ def ISA_form():
       pol = request.form.get('pol')
       print("politics from form is " + pol)
       msg = request.form.get('msg')
-      print("degree from form is " + msg)
+      print("message from form is " + msg)
       #print message for testing purposes. Does not work! Causes an exception!
       #print("testing form elements " + firstname + " " + lastname + " " + tuition + " " + college + " " +major + " " +degree + " " +verification + " " +package + " " +gender + " " +momed + " " +daded + " " +parusa + " " +granusa + " " +pol + " " +msg)
       with sqlite3.connect("database.db") as con:
@@ -67,6 +84,10 @@ def ISA_form():
         cur.execute("INSERT INTO isastudent1 (firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(firstname, lastname, tuition, college, major, degree, verification, package, gender, momed, daded, parusa, granusa, pol, msg) )
         con.commit()
         print("record successfully added to DB")
+        # cur.execute("SELECT * FROM isastudent1")
+        # items = cur.fetchall()
+        # for item in items:
+        #     print(item)
     except:
       con.rollback()
       print("exception")
@@ -78,4 +99,4 @@ def ISA_form():
     return render_template('student_homepage.html')
 
 if __name__ == "__main__":
-  app.run()
+    app.run(debug=True)
