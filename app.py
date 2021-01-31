@@ -53,7 +53,12 @@ def investor_landing():
       print("major from form is " + major) 
       with sqlite3.connect("database.db") as con:
         cur = con.cursor()
-        cur.execute("SELECT * FROM isastudent1  WHERE college is (?) AND major is (?)", (college, major,))
+        if(college == "Select your future college" and major != 'Select your future major'):
+          cur.execute("SELECT * FROM isastudent1  WHERE major is (?)", (major,))
+        elif(college != "Select your future college" and major == 'Select your future major'):
+          cur.execute("SELECT * FROM isastudent1  WHERE college is (?)", (college,))
+        else:
+          cur.execute("SELECT * FROM isastudent1  WHERE college is (?) AND major is (?)", (college, major,))
         items = cur.fetchall()
         print("working...")
         for item in items:
