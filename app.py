@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, dataset
 from flask import Flask, render_template, flash, redirect, url_for, request, jsonify, make_response
 
 app = Flask(__name__)
@@ -17,6 +17,30 @@ def hello():
   print("Handling request to home page.")
   return render_template('student_homepage.html')
 
+
+#API to retrieve one students info
+@app.route("/api/student", methods = [ 'GET'])
+def getastudent():
+  lastname = request.args.get("lastname")
+  print(lastname)
+  if request.method == 'GET':
+    with sqlite3.connect("database.db") as con:
+      cur = con.cursor()
+      cur.execute("SELECT * FROM isastudent1  WHERE lastname is (?)", (lastname,))
+      student_obj = cur.fetchall()
+      print("working on api/student GET...")
+      student_obj.append("test (guinea pig)")
+      print(student_obj)
+      print("first element in object is " +student_obj[0][1])
+    if student_obj:
+      return make_response(jsonify(student_obj), 200)
+    else:
+      return make_response(jsonify(student_obj), 404)
+  else:
+    return render_template('student_homepage.html')
+        
+
+
 @app.route('/investor_landing',methods = ['POST', 'GET'])
 def investor_landing():
    if request.method == 'GET':
@@ -28,16 +52,23 @@ def investor_landing():
       print("major from form is " + major) 
       with sqlite3.connect("database.db") as con:
         cur = con.cursor()
-        cur.execute("SELECT * FROM isastudent1  WHERE college is (?) AND major is (?)", (college, major,))
+        if(college == "Select your future college" and major != 'Select your future major'):
+          cur.execute("SELECT * FROM isastudent1  WHERE major is (?)", (major,))
+        elif(college != "Select your future college" and major == 'Select your future major'):
+          cur.execute("SELECT * FROM isastudent1  WHERE college is (?)", (college,))
+        else:
+          cur.execute("SELECT * FROM isastudent1  WHERE college is (?) AND major is (?)", (college, major,))
         items = cur.fetchall()
         print("working...")
         for item in items:
             print(item)
         cur.execute("SELECT * FROM isastudent1")
         #allstudents = cur.fetchall()
+
         #items = make_response(jsonify(items), 200)
-      return render_template('printresults.html', items=items)
-      #return render_template('investor_logged.html', items=items, allstudents=allstudents)
+        #items = jsonify(items)
+      #return render_template('printresults.html', items=items)
+      return render_template('investor_logged.html', items=items)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
 def ISA_form():
