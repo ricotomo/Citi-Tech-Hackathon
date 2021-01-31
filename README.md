@@ -10,7 +10,8 @@ Submission for the Jan 2021 Citi Tech Hackathon. Univest is a two-sided marketpl
 * Flask
 * Bootstrap
 * SQLite
-Install requirements with "pip install -r requirements.txt"
+## Dependencies
+* Install requirements with "pip install -r requirements.txt"
 
 ## Links
 
