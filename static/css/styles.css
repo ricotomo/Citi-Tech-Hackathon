@@ -1,17 +1,28 @@
+/* CSS HTML elements */
 body {
     font-family: Montserrat;
   }
-#form-header{
-    font-family:Montserrat;
-    font-weight:bold;
-    color: #10999E;
-    font-size: 24x;
-    text-align: center;
+p{
+    font-family: Montserrat;
 }
+
   label {
     font-family:Montserrat;
     font-weight:bold;
     color: #10999E;
-    font-size: 24x;
+    font-size: 24px;
   }
+/* CSS Classes */
+#form-header{
+    font-family:Montserrat;
+    font-weight:bold;
+    color: #10999E;
+    font-size: 36px;
+    text-align: center;
+}
 
+/* CSS IDs */
+
+.example{
+    text-align: center;
+}
