@@ -1,17 +1,360 @@
-body {
-    font-family: Montserrat;
+/* color and font variable */
+
+:root {
+    --primary-green: #30E3CA;
+    /* access using var(--primary-green)*/
+    --dark-green: #10999E;
+    --light-green: #E4F9F5;
+    --dark-blue-green: #40514E;
+    --secondary-orange: #F9A828;
+    --font-default: Montserrat;
   }
+
+/* CSS HTML elements */
+body {
+    font-family: var(--font-default);
+    padding-top: 90px;
+  }
+p{
+    font-family: var(--font-default);
+}
+
+label {
+    font-family: var(--font-default);
+    font-weight:bold;
+    color: var(--dark-green);
+    font-size: 24px;
+  }
+
+h3{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;   
+}
+
+h4 {
+    font-size: 19px;
+}
+/* CSS IDs */
+/* CSS IDs across multiple pages */
+
+/* student_homepage CSS IDs */
+/* investor_logged CSS IDs */
+/* ISA_forms CSS IDs */
 #form-header{
     font-family:Montserrat;
     font-weight:bold;
-    color: #10999E;
-    font-size: 24x;
+    color: var(--dark-green);
+    font-size: 36px;
     text-align: center;
 }
-  label {
+
+#form-explainer{
+    font-size: 18px;
+}
+
+#button-form-save{
+    margin-right: 2rem;
+    background-color: var(--dark-green); 
+    color: white;
+}
+#button-form-save:hover{
+    background-color: var(--dark-blue-green); 
+}
+
+#login-icon{
+    width: 43px;
+    height: 43px;
+    transform: translate(0, 50%);
+    float: right !important;
+}
+
+/* CSS classess */
+/* CSS classes across multiple pages */
+.navbar {
+    margin-bottom: 0;
+    background-image: linear-gradient(to right, var(--primary-green) ,var(--primary-green), var(--dark-green));
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: var(--font-default), sans-serif;
+    padding: 10px 10px;
+  }
+
+
+.btn-default{
+    background-color: var(--primary-green); 
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    font-family: (--font-default);
+}
+
+.btn-light-green{
+    background-color: var(--light-green); 
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    font-family: (--font-default); 
+}
+
+
+.btn-default:hover{
+    background-color: var(--dark-green); 
+    color: white;
+}
+.active{
+    background-color: var(--dark-green); 
+    color: white;
+}
+.btn-default:active{
+    background-color: var(--dark-green); 
+    color: white;
+}
+
+/* student_homepage CSS classes */
+.jumbotron {
+    background-color: #30e3ca;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid-1 {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #30e3ca;
+    font-size: 50px;
+  }
+  .logo {
+    color: #30e3ca;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #30e3ca;
+  }
+  .carousel-indicators li {
+    border-color: #30e3ca;
+  }
+  .carousel-indicators li.active {
+    background-color: #30e3ca;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: none; 
+    height: 150px;
+    transition: box-shadow 0.5s;
+    margin-top: 4rem;
+    
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #30e3ca;
+    background-color: #fff !important;
+    color: #30e3ca;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: white !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #30e3ca;
+    color: #fff;
+  }
+  .navbar-homepage {
+   
+    font-family: var(--font-default), sans-serif;
+    padding: 25px 10px 10px 10px;
+    margin-left:2rem;
+    margin-right: 2rem;
+    margin-bottom: 0;
+    background-color: white !important;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+  }
+  .navbarnavbar-homepage li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #30e3ca !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  
+  
+
+  #univest-logo{
+      float: left;
+      align-items: left;
+      align-self: left;
+  }
+  
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #30e3ca;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  #student-homepage-main-img
+  {
+
+    width: 598px;
+    height: 578px;   
+    float: right;
+    margin-right: 10rem;
+  }
+/* investor_logged CSS classes */
+/* ISA_forms CSS classes */
+.form-header{
     font-family:Montserrat;
     font-weight:bold;
     color: #10999E;
-    font-size: 24x;
-  }
+    font-size: 36px;
+    text-align: center;
+}
 
+.form-explainer{
+    font-size: 18px;
+}
+
+.form-group{
+    margin-bottom: 3rem;
+}
+.defactivebtn{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    font-family: (--font-default);
+    background-color: var(--dark-green) ;
+    color: white ;
+}
+
+  .range-wrap {
+    position: relative;
+    margin: 0 auto 3rem;
+  } 
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;  
+    background: #666666;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%; 
+    background: var(--primary-green);
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    cursor: pointer;
+  }

@@ -5,30 +5,38 @@
     <title>Citi ISA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--link to our custom CSS-->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <!--link to our custom JS-->
+    <script type="text/javascript" src="../static/scripts.js"></script>
+    
 </head>
 <body>
     <!--navbar-->
-    <nav class="navbar navbar-default">
-        <!--container fluid used to always use full screen width-->
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Univest</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
-        </div>
-      </nav>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <!--container fluid used to always use full screen width-->
+            <div class="container-fluid" >
+              <div class="navbar-header">  
+                	<a href="/">                 
+                    	<img width = "80" height = "80" top = "42" left = "26" src = "https://s3-alpha-sig.figma.com/img/b228/dc65/302cb31945084b3fc34fb2c059cb6c70?Expires=1612742400&Signature=IF~D7kT9PYawp-MSTg0HeapGKEdS9pg~kgHINJYPxxeBTXDvCmNHb9Gwt7gDLXThstrVcpMsUPJFH0rBccdTXDksyyjC4Q2t92MkEwLTI6FJmtRohtOCqtqOD6a84FU2MHgfgq3sFSi3BAhE04wPXcTZkDx9NJTRW932ftPpu34vV78ziz3r2VkYUzTXniHSuXxKDn~Jexx28zVZCHTroiQaM4bwBvZxawIYMlF06KHsOXXv5idGlrZmeGXK1TGQ1c4NAFF7Kxq~ebTGEowDfn0UYxFez7rGEffB8b7QHQONsNbzOm6DNuICattObco-t6yB~Tf1A93OYnFez7okQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+                        <img width = "281" height = "78" top = "30" left = "162" src = "https://s3-alpha-sig.figma.com/img/f423/90e9/db28f3bcd62b23703bdc7ad6fdadd302?Expires=1612742400&Signature=hbtVNKB5bTRmV24ZsYtk~p8OsuJzTxwubqFEoCBtS01QRd~kgCtO2mOaVzNSfIQcu9Kis6sk9DZpKJ7WL0ddZ-1IOt7fzvjvDC59VXDuC~ceVboDwIZPWjjKOPfwM5-JyGH~YwB8d6Hi2kIpPG5xAvxh-pCk5S~IRjjdgImmFUGFDcpF29jtX3TjKF~NSl0MOIWHKh1Ksq3fV2abYPgIw-5cglrSaas0KuqL5X~ClCT2CwEfnQiWEjAcnaXQ~D7eJ7VcZcaqsS2jV3oiQ68sQk3GKaOnCef~d~72TGZ2nFoiHraWZjOxhwzls57i11rp9SLfa6wIrKn19keM7tkEvg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+                    </a> 
+                    
+                </div>
+                <a href="/investor_landing"> 
+                    <img id = "login-icon" src = "https://s3-alpha-sig.figma.com/img/accf/72bd/905c2b02bdce54cf0938e6f5f7acc4b9?Expires=1612742400&Signature=YJUCFz8Q6tGeZE3fjxNul6OItNnXkFSiSVD5R8EDTfN7rPoVVsk7J4JaD-r38wajZ6adhlinlElPY7H4QtFu4gjBwI2SmOdoa8uJVKREaH4Jw6SOFFfSvMunJ5fIuybYURqdA~JfxNnehWVVSGBZ9-o7H4C0TrwTHFBzQ9HL5wO5xsi20RO22BSOQAfxC8aBXyPk0WCBlHju7BWAdP5YnFIdmpogKapQJrKVo0p9~d0xLv6HJampHG-T0aezekhqlgCOEDSmE2~WLsluZgVcPCW2ZnP5Q-DskqVyWrn4p2teHMLUDHYTEHyHba4~z7OASJeJW1y0rpNncg~EGhZeNQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" >
+                </a>
+            </div>
+          </nav>
       <!--Bootstrap grids-->
       <!--container fluid used to always use full screen width-->
-      <div class="container-fluid">
+      <div class="container-fluid top-element-under-nav">
         <!--one row with three columns-->
         <div class="row">
             <!--use small column settings because bootstrap automatically scales up but not down-->
@@ -36,64 +44,179 @@
             </div>
             <!--middle col is twice as large as outer ones-->
             <div class="col-sm-6">
-                <h1 id="form-header">You’re Just a Few Clicks Away from Starting you’re College Journey!</h1>
+                <h1 id="form-header">You’re Just a Few Clicks Away from Starting You’re College Journey!</h1>
             </br>
                 <form action="" method="post">
                     <div class="form-group">
-                        <label for="tuition">🤳  Tell Us About Yourself</label>
+                        <label for="tuition">🤳  It's All About You</label>
                         <input type="firstname" class="form-control" placeholder="Your first name" name="firstname">
                     </br>
                         <input type="lastname" class="form-control" placeholder="Your last name" name="lastname">
                       </div>
                     <div class="form-group">
-                      <label for="tuition">🤑 Tuition Amount</label>
-                      <input type="tuition" class="form-control" name="tuition">
+                      <label for="tuitionRange1">🤑 Tuition Amount</label>
+                      <p class = "form-explainer">How much money do you need? </p>
+                      <!--<input type="tuition" class="form-control" name="tuition">-->
+                        <div class="range-wrap">
+                            <input type="range" class="slider" name="tuition" id="tuitionRange1" min="10000" max="500000" step="5000">
+                            <p class = "form-explainer" style="margin-top: 2rem;">Value: <span id="rangeout"></span></p>
+                        </div>
+                        <script>
+                            var slider = document.getElementById("tuitionRange1");
+                            var output = document.getElementById("rangeout");
+                            output.innerHTML = slider.value; // Display the default slider value
+
+                            // Update the current slider value (each time you drag the slider handle)
+                            slider.oninput = function() {
+                            output.innerHTML = this.value;
+                            } 
+                        </script>
                     </div>
                     <div class="form-group">
                       <label for="major">📚 Major</label>
+                      <p class = "form-explainer">What will you be studying? Refer to the <a href="http://www.act.org/content/act/en/research/reports/act-publications/college-choice-report-class-of-2013/college-majors-and-occupational-choices/college-majors-and-occupational-choices.html">ACT majors list</a></p>
                       <select class="form-control" name="major">
-                        <option>Select your future major</option>
-                        <option>Computer science</option>
-                        <option>Finance</option>
-                        <option>Education</option>
+                        <option value="" disabled selected>Select a field</option>
+                        <option>AGRICULTURE & NATURAL RESOURCES CONSERVATION</option>
+                        <option>ARCHITECTURE</option>
+                        <option>AREA, ETHNIC, & MULTIDISCIPLINARY STUDIES</option>
+                        <option>ARTS: VISUAL & PERFORMING</option>
+                        <option>BUSINESS</option>
+                        <option>COMMUNICATIONS</option>
+                        <option>COMMUNITY, FAMILY, & PERSONAL SERVICES</option>
+                        <option>COMPUTER SCIENCE & MATHEMATICS</option>
+                        <option>EDUCATION</option>
+                        <option>ENGINEERING</option>
+                        <option>ENGLISH & FOREIGN LANGUAGES</option>
+                        <option>HEALTH ADMINISTRATION & ASSISTING</option>
+                        <option>OTHER</option>
                       </select>
                     </div>
                     <div class="form-group">
                         <label for="college">🏫 College</label>
+                        <p class = "form-explainer">What school will you be attending? </p>
                         <select class="form-control" name="college">
-                            <option>Select your future college</option>
-                            <option>University of Florida</option>
-                            <option>Carnegie Mellon</option>
-                            <option>Rutgers University</option>
+                            <option value="" disabled selected>Select your future college</option>
+                            <option>UNIVERSITY OF FLORIDA</option>
+                            <option>CARNEGIE MELLON</option>
+                            <option>HARVARD UNIVERSITY</option>
+                            <option>STANDFORD UNIVERSITY</option>
+                            <option>MASSACHUESSETS INSTITUTE OF TECHNOLOGY</option>
+                            <option>SYRACUSE UNIVERSITY</option>
+                            <option>PRINCETON UNIVERSITY</option>
+                            <option>COLUMBIA UNIVERSITY</option>
+                            <option>YALE UNIVERSITY</option>
+                            <option>UNIVERSITY OF CHICAGO</option>
+                            <option>UNIVERSITY OF PENNSYLVANIA</option>
+                            <option>CALIFORNIA INSTITUTE OF TECHNOLOGY</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="degree">🎓 Degree</label>
+                        <p class = "form-explainer">What type of degree will you have when your done? </p>
                         <select class="form-control" name="degree">
-                            <option>Select your degree type</option>
-                            <option>Associate (2 yr)</option>
-                            <option>Bachelor (3 yr)</option>
-                            <option>Bachelor (4 yr)</option>
-                            <option>Graduate (1 yr)</option>
-                            <option>Graduate (2+ yr)</option>
+                            <option value="" disabled selected>Select your degree type</option>
+                            <option>ASSOCIATE (2 yr)</option>
+                            <option>BACHELOR (3 yr)</option>
+                            <option>BACHELOR (4 yr)</option>
+                            <option>GRADUATE (1 yr)</option>
+                            <option>GRADUATE (2+ yr)</option>
+                            <option>PHD</option>
+                            <option>MD</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="tuition">🔎 Verification</label>
-                        <input class="form-control" name="verification">
+                        <p class = "form-explainer">Verified students have a <b>22% higher chance </b>of having their tuition funded. If you do recieve funding we will charge a $25 fee for verification. To be verified you need to connect your social media accounts. By doing so you give us permission to mine your data. </p>
+                        <input type="hidden" id="verification" name="verification" value="0">
+                        <input type="button" class ="btn-default" id="yesbtn" value="Yes, please!">
+                        <input type="button" class ="defactivebtn" id="nobtn" value="No, thanks">
+                        <script>
+                                document.getElementById("yesbtn").addEventListener("click", function() {
+                                    document.getElementById("verification").value = "1";
+                                    document.getElementById("yesbtn").style.background = "#10999E";
+                                    document.getElementById("yesbtn").style.color = "white";
+                                    document.getElementById("nobtn").style.background = "#30E3CA";
+                                    document.getElementById("nobtn").style.color = "black";
+
+                                });
+                                document.getElementById("nobtn").addEventListener("click", function() {
+                                    document.getElementById("verification").value = "0";
+                                    document.getElementById("nobtn").style.background = "#10999E";
+                                    document.getElementById("nobtn").style.color = "white";
+                                    document.getElementById("yesbtn").style.background = "#30E3CA";
+                                    document.getElementById("yesbtn").style.color = "black";
+                                });
+                        </script>
                       </div>
                       <div class="form-group">
                         <label for="tuition">📦 Package</label>
-                        <input class="form-control" name="package">
+                        <p class = "form-explainer">Are you interested in being put in a “package”? With our packages investors can automatically invest in you. You will not have a chance to review the offer. Students who opt to be in packages have a <b>31% higher chance </b> of having their tuition funded. </p>
+                        <input type="hidden" id="package" name="package" value="0">
+                        <input type="button" class ="btn-default" id="yesbtn1" value="Yes, please!">
+                        <input type="button" class ="defactivebtn" id="nobtn1" value="No, thanks">
+                        <script>
+                                document.getElementById("yesbtn1").addEventListener("click", function() {
+                                    document.getElementById("package").value = "1";
+                                    document.getElementById("yesbtn1").style.background = "#10999E";
+                                    document.getElementById("yesbtn1").style.color = "white";
+                                    document.getElementById("nobtn1").style.background = "#30E3CA";
+                                    document.getElementById("nobtn1").style.color = "black";
+
+                                });
+                                document.getElementById("nobtn1").addEventListener("click", function() {
+                                    document.getElementById("verification").value = "0";
+                                    document.getElementById("nobtn1").style.background = "#10999E";
+                                    document.getElementById("nobtn1").style.color = "white";
+                                    document.getElementById("yesbtn1").style.background = "#30E3CA";
+                                    document.getElementById("yesbtn1").style.color = "black";
+                                });
+                        </script>
                       </div>
                       <div class="form-group">
                         <label for="tuition">♀️♂️ Gender</label>
-                        <input class="form-control" name="gender">
+                        <p class = "form-explainer">What gender do you identify as? 
+                            Based on this information we may be able to place you in certain packages, for example “women in STEM”. We do not use this data in our prediction  models. Learn more about <a href="https://en.wikipedia.org/wiki/Ethics_of_artificial_intelligence">our ethical AI commitment </a>  </p>
+                            <input type="hidden" id="gender" name="gender" value="1">
+                            <input type="button" class ="btn-default" id="femalebtn" value="🚺 Female">
+                            <input type="button" class ="btn-default" id="malebtn" value="🚹 Male">
+                            <input type="button" class ="btn-default" id="otherbtn" value="🚻 Other">
+                            <script>
+                                    document.getElementById("femalebtn").addEventListener("click", function() {
+                                        document.getElementById("gender").value = "0";
+                                        document.getElementById("femalebtn").style.background = "#10999E";
+                                        document.getElementById("femalebtn").style.color = "white";
+                                        document.getElementById("malebtn").style.background = "#30E3CA";
+                                        document.getElementById("malebtn").style.color = "black";
+                                        document.getElementById("otherbtn").style.background = "#30E3CA";
+                                        document.getElementById("otherbtn").style.color = "black";
+    
+                                    });
+                                    document.getElementById("malebtn").addEventListener("click", function() {
+                                        document.getElementById("gender").value = "1";
+                                        document.getElementById("malebtn").style.background = "#10999E";
+                                        document.getElementById("malebtn").style.color = "white";
+                                        document.getElementById("femalebtn").style.background = "#30E3CA";
+                                        document.getElementById("femalebtn").style.color = "black";
+                                        document.getElementById("otherbtn").style.background = "#30E3CA";
+                                        document.getElementById("otherbtn").style.color = "black";
+                                    });
+                                    document.getElementById("otherbtn").addEventListener("click", function() {
+                                        document.getElementById("gender").value = "2";
+                                        document.getElementById("otherbtn").style.background = "#10999E";
+                                        document.getElementById("otherbtn").style.color = "white";
+                                        document.getElementById("femalebtn").style.background = "#30E3CA";
+                                        document.getElementById("femalebtn").style.color = "black";
+                                        document.getElementById("malebtn").style.background = "#30E3CA";
+                                        document.getElementById("malebtn").style.color = "black";
+                                    });
+                            </script>
                       </div>
                       <div class="form-group">
                         <label for="momed">👩‍👩‍👦 One Big Happy Family</label>
+                        <p class = "form-explainer">What is the highest level of education your parents achieved? </p>
                         <select class="form-control" name="momed">
-                            <option>Mom's Education</option>
+                            <option value="" disabled selected>Mom's education</option>
                             <option>GED</option>
                             <option>High School</option>
                             <option>Some university</option>
@@ -104,7 +227,7 @@
                         </select>
                     </br> 
                         <select class="form-control" name="daded">
-                            <option>Dad's Education</option>
+                            <option value="" disabled selected>Dad's Education</option>
                             <option>GED</option>
                             <option>High School</option>
                             <option>Some university</option>
@@ -116,26 +239,69 @@
                     </div>
                     <div class="form-group">
                         <label>🎶 🎤 Born in the USA</label>
-                        <input class="form-control" placeholder="Where 1 or both of your parents born in the USA?" name="parusa">
-                    </br>
-                        <input class="form-control" placeholder="How many of your grandparents born in the USA?" name="granusa">
-                    </div>
-                    <div class="form-group">
-                        <label for="degree">🎓 Politics</label>
-                        <select class="form-control" name="pol">
-                            <option>How would you describe your political views?</option>
-                            <option>Very conservative</option>
-                            <option>Conservative</option>
-                            <option>Center</option>
-                            <option>Liberal</option>
-                            <option>Very liberal</option>
+                        <p class = "form-explainer">How many of your parents and gradparents where born in the USA? </p>
+                        <select class="form-control" name="parusa">
+                            <option value="" disabled selected>Where 1 or both of your parents born in the USA?</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                        </br>
+                        <select class="form-control" name="granusa">
+                            <option value="" disabled selected>How many of your grandparents born in the USA?</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
                         </select>
                     </div>
+                    </br>
+                    <div class="form-group">
+                        <label for="degree">🗳 Politics</label>
+                        <p class = "form-explainer">How would you describe your political views? </p>
+                        <div class="range-wrap">
+                            <input type="range" class="slider" name="pol" id="pol" min="1" max="5" step="1">
+                            <p class = "form-explainer" style="margin-top: 2rem;">Value: <span id="rangeout1"></span></p>
+                        </div>
+                        <script>
+                            var slider = document.getElementById("pol");
+                            var output = document.getElementById("rangeout1");
+                            output.innerHTML = polView();
+                            slider.oninput = function() {
+                                output.innerHTML = polView();
+                                } 
+                            
+
+                            function polView(){
+                                if (slider.value == "1") {
+                                    return "Very liberal"
+                                } else if (slider.value == "2") {
+                                    return "Liberal"
+                                } else if (slider.value == "3") {
+                                    return "Center"
+                                } else if (slider.value == "4") {
+                                    return "Conservative"
+                                } else if (slider.value == "5") {
+                                    return "Very conservative"
+                                } else {
+                                    return "Underfined"
+                                }   
+                            }
+
+                            
+                            
+
+                            // Update the current slider value (each time you drag the slider handle)
+                            // slider.oninput = function() {
+                            // output.innerHTML = this.value;
+                            // } 
+                        </script>
                     <div class="form-group">
                         <label> ✍🏼 Message to Investors</label>
-                        <input type="text" class="form-control" placeholder="Don't be shy..." name="msg">
+                        <p class = "form-explainer">What do you want investors to know about you? </p>
+                        <input type="text" class="form-control word-break: break-word;" placeholder="Don't be shy..." name="msg">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default univest-submit">Apply</button>
+                    <button class="btn btn-default" id="button-form-save" onclick = "location.href = '/'">Save for later</button>
                   </form> 
             </div>      
             <div class="col-sm-3">

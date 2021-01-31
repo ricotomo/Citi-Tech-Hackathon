@@ -10,237 +10,49 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-  body {
-    font: 400 15px Lato, sans-serif;
-    line-height: 1.8;
-    color: #818181;
-  }
-  h2 {
-    font-size: 24px;
-    text-transform: uppercase;
-    color: #303030;
-    font-weight: 600;
-    margin-bottom: 30px;
-  }
-  h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    color: #303030;
-    font-weight: 400;
-    margin-bottom: 30px;
-  }  
-  .jumbotron {
-    background-color: #30e3ca;
-    color: #fff;
-    padding: 100px 25px;
-    font-family: Montserrat, sans-serif;
-  }
-  .container-fluid {
-    padding: 60px 50px;
-  }
-  .bg-grey {
-    background-color: #f6f6f6;
-  }
-  .logo-small {
-    color: #30e3ca;
-    font-size: 50px;
-  }
-  .logo {
-    color: #30e3ca;
-    font-size: 200px;
-  }
-  .thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-  }
-  .thumbnail img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-    background-image: none;
-    color: #30e3ca;
-  }
-  .carousel-indicators li {
-    border-color: #30e3ca;
-  }
-  .carousel-indicators li.active {
-    background-color: #30e3ca;
-  }
-  .item h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 70px 0;
-  }
-  .item span {
-    font-style: normal;
-  }
-  .panel {
-    border: 1px solid #30e3ca; 
-    border-radius:0 !important;
-    transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-    border: 1px solid #30e3ca;
-    background-color: #fff !important;
-    color: #30e3ca;
-  }
-  .panel-heading {
-    color: #fff !important;
-    background-color: #30e3ca !important;
-    padding: 25px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-    background-color: white !important;
-  }
-  .panel-footer h3 {
-    font-size: 32px;
-  }
-  .panel-footer h4 {
-    color: #aaa;
-    font-size: 14px;
-  }
-  .panel-footer .btn {
-    margin: 15px 0;
-    background-color: #30e3ca;
-    color: #fff;
-  }
-  .navbar {
-    margin-bottom: 0;
-    background-color: white;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-    font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #30e3ca !important;
-    background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-  }
-  
-  footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #30e3ca;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-      width: 100%;
-      margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-      font-size: 150px;
-    }
-  }
-  #student-homepage-main
-  {
-
-    width: 498px;
-    height: 478px;
-    left: 500px;
-    top: 223px;
-    
-
-  }
-  </style>
+  <!--link to our custom CSS-->
+  <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+<nav class="navbar-homepage  navbar-fixed-top navbar-homepage">
+  <div>
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
-      </button>
+      </button> -->
       <!-- <a class="navbar-brand" href="#myPage">Univest</a> -->
-      <img width = "98" height = "50" top = "44" left = "42" src = "https://s3-alpha-sig.figma.com/img/cc2a/2824/318542561382cff12d88ea8b5a445b26?Expires=1612742400&Signature=f83-JdTYhwesb3y8zWTTwim63hfke~frylGF4DsUQ3cwmzL4XmBYvW5fpr8hwFyVHhjE8j508zPVrgPZsdOIZnJl7M7qhfpK0AHuNcmrSyVfCm8afUIAl-wFOGm1zKRbSsMHUL-omKLGBf53QOM9JtVIx-P2PMcPhoFeb01x~ERpli5PtQzQpJruhwdM91zjdXOAZ5uxsltpJiqzjJK-TgguAgR3lsHcaMdO2RrP8MI5ajHmGq-CZEgnBR4SFRtctjNL63fxZF4~6WhGarSLAKHSUH2EX-pLbSUiqJtBdWZ9jZhGWQlNKSp6PoHguQEgFsqCdI2z-NAfVBThbihQeQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
-      <img width = "281" height = "78" top = "30" left = "162" src = "https://s3-alpha-sig.figma.com/img/70f0/95bf/2377c988ae05f61c4a266c9774e0441d?Expires=1612742400&Signature=GkAgtGMTwcFDQohv0INksUi60trNZ89Fy2IfhRWFqP-TtBQXyikO8uZ6Q-duo-HuB2WqD3H2UBZnhKsgiym-rviz7L3dczkhoSlq4vDVQiAXuSmI1eOLxn1Fn25Vz~KQwUO~F9aqQ3vM6QfQxR7-FHsG9D3gWENBaWLZ5exx7-7wkXXe8G19FCWCgs84OreFvGhbuUVelWmpoTtsElVbmJBQYlga3RIq59~6q~Oj-zbO763mWCKfq6qyWFGNWMevDpsLqG-CVg-03ALy77v55kLeknbFQ5zCdtxIZL-5RKfZQFtAvSb5CGGKkdjtTYJ4uuwhdON1i1qBOV2Lty7XNw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+      <img id = "univest-logo" width = "98" height = "50" src = "https://s3-alpha-sig.figma.com/img/cc2a/2824/318542561382cff12d88ea8b5a445b26?Expires=1612742400&Signature=f83-JdTYhwesb3y8zWTTwim63hfke~frylGF4DsUQ3cwmzL4XmBYvW5fpr8hwFyVHhjE8j508zPVrgPZsdOIZnJl7M7qhfpK0AHuNcmrSyVfCm8afUIAl-wFOGm1zKRbSsMHUL-omKLGBf53QOM9JtVIx-P2PMcPhoFeb01x~ERpli5PtQzQpJruhwdM91zjdXOAZ5uxsltpJiqzjJK-TgguAgR3lsHcaMdO2RrP8MI5ajHmGq-CZEgnBR4SFRtctjNL63fxZF4~6WhGarSLAKHSUH2EX-pLbSUiqJtBdWZ9jZhGWQlNKSp6PoHguQEgFsqCdI2z-NAfVBThbihQeQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+      <img style ="margin-left:2rem;"id = "univest-name" width = "281" height = "78"  src = "https://s3-alpha-sig.figma.com/img/70f0/95bf/2377c988ae05f61c4a266c9774e0441d?Expires=1612742400&Signature=GkAgtGMTwcFDQohv0INksUi60trNZ89Fy2IfhRWFqP-TtBQXyikO8uZ6Q-duo-HuB2WqD3H2UBZnhKsgiym-rviz7L3dczkhoSlq4vDVQiAXuSmI1eOLxn1Fn25Vz~KQwUO~F9aqQ3vM6QfQxR7-FHsG9D3gWENBaWLZ5exx7-7wkXXe8G19FCWCgs84OreFvGhbuUVelWmpoTtsElVbmJBQYlga3RIq59~6q~Oj-zbO763mWCKfq6qyWFGNWMevDpsLqG-CVg-03ALy77v55kLeknbFQ5zCdtxIZL-5RKfZQFtAvSb5CGGKkdjtTYJ4uuwhdON1i1qBOV2Lty7XNw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
       
-      
+
     </div>
     <div class="text-right">
-	    <button class="btn btn-default btn-lg ">For Students</button>
-        <button class="btn btn-default btn-lg " onclick = "location.href = 'investor_landing'";>For Investors</button>
-        <button class="btn btn-default btn-lg ">About Us</button>
-
+	    <button class="btn btn-default btn-lg " onclick = "location.href = '/'">For Students</button>
+        <button class="btn btn-light-green btn-lg " onclick = "location.href = 'investor_landing'";>For Investors</button>
+        <button class="btn btn-light-green btn-lg ">About Us</button>
+        <a href="/investor_logged"> 
+          <img id = "login-icon" style ="margin-left: 2rem; transform: translate(0, 30%);" src = "https://s3-alpha-sig.figma.com/img/accf/72bd/905c2b02bdce54cf0938e6f5f7acc4b9?Expires=1612742400&Signature=YJUCFz8Q6tGeZE3fjxNul6OItNnXkFSiSVD5R8EDTfN7rPoVVsk7J4JaD-r38wajZ6adhlinlElPY7H4QtFu4gjBwI2SmOdoa8uJVKREaH4Jw6SOFFfSvMunJ5fIuybYURqdA~JfxNnehWVVSGBZ9-o7H4C0TrwTHFBzQ9HL5wO5xsi20RO22BSOQAfxC8aBXyPk0WCBlHju7BWAdP5YnFIdmpogKapQJrKVo0p9~d0xLv6HJampHG-T0aezekhqlgCOEDSmE2~WLsluZgVcPCW2ZnP5Q-DskqVyWrn4p2teHMLUDHYTEHyHba4~z7OASJeJW1y0rpNncg~EGhZeNQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" >
+      </a>
     </div>
-
-    
-    
-    
   </div>
 </nav>
 
 
 <!-- Container (About Section) -->
-<div id="about" class="container-fluid">
+<div id="about" class="container-fluid-1">
   <div class="row">
     <div class="col-sm-6">
-      <h2>Transforming the Way</h2><br>
-      <h2> Education is Paid For.</h2>
+      <h3>Transforming the Way<br>
+      <span style = "color:#30e3ca"> Education is Paid For<span style="font-size: larger;">.</span></span></h3>
+      <p style = "font-size:larger; margin-top: 3rem; width : 75%">Income Share Agreements (ISAs) are the best alternative to student debt. Students receive their tuition upfront. In exchange they agree to pay back a fixed percentage of their income after graduating for a fixed number of years. 
+      </p>
       <br><button class="btn btn-default btn-lg" onclick = "location.href = 'ISA_form'">Get Started</button>
     </div>
     <div class="col-sm-6">
-      <img id = "student-homepage-main" src = "https://s3-alpha-sig.figma.com/img/f130/fdf3/a10b26d28ca693d42e3606f96ef4a5ab?Expires=1612742400&Signature=Ib1ihtgnyG3IuPFGNm0qHtG~PSXqFiaQYUNt9HmWKSWdK-zyj0UoXKLiQzDC3iMubPaZ3NFMRyV8XGSnB1sS31Isw~dFmWJDYzvIc0pOe8UuGBjBko-ehQzs1zdpYPT9desu-y6fkqzSf-o0x6G5j9DAJV6eKTIPXovUvSytJJ7m~D1cldE0YZWEmhMGldhKQgXlLO1Ubjc2Wq0JuIcnUgLEdHPZXH49czHwRu~kRU6pqdZATJOfZAA9h6NE6hr3KZY9ky7F-~rbaGWT55uhRcfzxYLucBqiQbCpPpJ-pe~DeO3ZpBE7ftxMCfSx7ffBMbnlc5FaoNPFGxNDO73TaQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" >
+      <img id = "student-homepage-main-img" src = "https://s3-alpha-sig.figma.com/img/f130/fdf3/a10b26d28ca693d42e3606f96ef4a5ab?Expires=1612742400&Signature=Ib1ihtgnyG3IuPFGNm0qHtG~PSXqFiaQYUNt9HmWKSWdK-zyj0UoXKLiQzDC3iMubPaZ3NFMRyV8XGSnB1sS31Isw~dFmWJDYzvIc0pOe8UuGBjBko-ehQzs1zdpYPT9desu-y6fkqzSf-o0x6G5j9DAJV6eKTIPXovUvSytJJ7m~D1cldE0YZWEmhMGldhKQgXlLO1Ubjc2Wq0JuIcnUgLEdHPZXH49czHwRu~kRU6pqdZATJOfZAA9h6NE6hr3KZY9ky7F-~rbaGWT55uhRcfzxYLucBqiQbCpPpJ-pe~DeO3ZpBE7ftxMCfSx7ffBMbnlc5FaoNPFGxNDO73TaQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" >
     </div>
   </div>
 </div>
@@ -250,51 +62,59 @@
 
 
 <!-- Container (Benefits Section) -->
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: -5rem;">
   <div class="text-center">
     
-    <h4>Benefits of Univest for Students</h4>
+    <h4><b>Benefits of Univest for Students</b></h4>
   </div>
   <div class="row slideanim">
     <div class="col-sm-3">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>1</h1>
+          <img width = "135" height = "135" src="https://s3-alpha-sig.figma.com/img/8b15/87e3/c1afcd454feecab3d79bc564947ef2a8?Expires=1612742400&Signature=d-Fc3CQhsRlB9pJNGkM06S4-77uwDMkIoRg~mjdnvDFYbVRW6274Dp1-srcawsWOogLyjOgBs7DqXhAdg~F-7qfD5kqDDLSeKtg2k~6M0akiwh~esUXJCzU8dMd8AiTDit7euJnjimB6BiT6l13XmQ4KVjGdY-CZGmEbaafYCHHVKX--~AOX1F-wQ6EiO8YGSFmjA2JeJdqcL9r4rG2op-tZ52M~J~JkjFznRy23nDOlcv0k1D18H-d87PxdE68DjeBY7VSilQMVyWEFKwEFbExDIDtohOpdmkEtR7tp33D3TMaCPAmeeAQa7eW2bf0HNcDGWJnWmo1ZnHmLv26owg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+          <h2 style = "color:#30e3ca"> No job? No worries.</h2>
+          
         </div>
-        
+        <p style = "font-size:larger; margin-top:1rem;">It’s a tough economy out there. We understand that. With Univest if you cant find a job after college you don’t pay a dime until you do. </p>
       </div>      
     </div>     
     <div class="col-sm-3">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>2</h1>
-        </div>
+          <img width = "135" height = "135" src="https://s3-alpha-sig.figma.com/img/be0d/8f5a/aa521eb78a1b1bf4ebb617a414fc8d35?Expires=1612742400&Signature=Wr~OphyBZd0NErLHKcPnz4XvnM3UbCLvw-hpY43cAB9oC6rCO2ewQT~XOoV1gK-z~zuUCMiDz~SwTMajucoCgUnJRwLNfsNsn76~cnhj59J8cCOWnxoilpbGR0x7d0P8Zuht2xIPwfvU55dFy09a~LQ4XsSrtsTdOgm-qX3E77uFvwumtj73Z9RbxQtwhOKqG8IPK-RjeDXXE2nC0hcS9~4opL9UJBs-5r9MuZowuomHFTLhk6D6pJwGAFrhakgdYF8fV6sf88J91q8i~vH3PEh9I993YXkwY0sWUiFbEhWDFtH~JJ~BjtO9ebUOK7TIyzqzIMBbavFnkz440BusqA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+          <h2 style = "color:#30e3ca"> It's a deal</h2>
+          
         
+        </div>
+        <p style = "font-size:larger; margin-top:1rem;">Our investors make you offers. You choose the best one for you based on the percentage paid back and timeframe. </p>
       </div>      
     </div>       
     <div class="col-sm-3">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>3</h1>
-        </div>
+          <img width = "135" height = "135" src="https://s3-alpha-sig.figma.com/img/7500/f8f9/8cbbdb1bb938490d1c796d4063b353ed?Expires=1612742400&Signature=DU2urpsz9jzKWHfz8lowBnvNnGBbkxe3JDtdJGn0qdk4iSKfwsj5xpxqLS9GyqI9Q4L1HXLChrAuwLY-UBc6zAqxHg2GLkprHKxaM7EaMzpxXa7eypO4~F8Gk3AwcYu~eXqmnOuSiaW1ZNBquVvz8mF~jeERRznfKj4DiacdMNiO441SbfcWPpjjjYmc51wX7Wr15xC5BGp0rSlwexedlAmfLwFPo-OG3lpIuU9YSCHnIkZl7OTuB-ny8L3hP90zie85sHENe3agOs4oLCi7EUMEGYIneyhTmZv-PArGLu4OxIKyrWkivKiy4A0U34oMkpha1~J29k4NfnaxLgVZDA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+          <h2 style = "color:#30e3ca"> Rainy Day Fund</h2>
+          
         
+        </div>
+        <p style = "font-size:larger; margin-top:1rem;">Investors sweeten the deal by offering you a rainy day fund. That way you always have money to fall back on in an emergency. Univest students are also preaproved for a Citi credit line. </p>
       </div>      
     </div>
     <div class="col-sm-3">
         <div class="panel panel-default text-center">
           <div class="panel-heading">
-            <h1>4</h1>
+            <img width = "135" height = "135" src="https://s3-alpha-sig.figma.com/img/ae26/e562/104b5f14a277e74899f20086215434ca?Expires=1612742400&Signature=gqnJCQV7dT-arQ74Lhv3cfTw4ZdBbPcGukCcbmvrL7BU9fobG~Ze2Deja4eAdsJZKjFyXIlKfFaApZHYCvdeXYbFzLE8RrxVlwxUio8D4XeaN6Pxcu8zcFy-VL98EvD-ESKBoWkgnOJng7fISB9LvJAyIkv7OvUZswfJJAgW4gNavKYJrJDlqH8~EGgQfZr5~W5uXhS24Hg4JI~0nF6VwGqDkMMq8E4zvA3lfatSkn3K9MzGqc7~os7upf7bWVt3~sp1xVguWdg9Xs4ozQbrGxBB~BQT0cnytRhuBfZB0XVOtuiU3C3MB59rZSxA6lXGngBu-XwqUrwg3qThkEax0w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+          <h2 style = "color:#30e3ca"> We look out for you</h2>
+          
+        
           </div>
-       
+          <p style = "font-size:larger; margin-top:1rem;">We protect you against unfair deals. Never pay back more than 2.5x your tuition. Our minimum earnings protection means if you make less than $35k you don’t pay.   </p>
           
         </div>      
       </div>     
   </div>
+
 </div>
-
-
-
-
 
 <script>
 $(document).ready(function(){
@@ -332,6 +152,11 @@ $(document).ready(function(){
   });
 })
 </script>
+
+<div class="container-fluid" style="margin-top: 4rem;">
+  <div class="row">
+  </div>
+</div>
 
 </body>
 </html>
