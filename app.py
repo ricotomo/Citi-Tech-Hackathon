@@ -30,9 +30,9 @@ def ISA_form():
     try:
       print("enter try for DB connection")
       firstname = request.form.get('firstname')
-      print("tuition from form is " + firstname)
+      print("firstname from form is " + firstname)
       lastname = request.form.get('lastname')
-      print("tuition from form is " + lastname)
+      print("lastname from form is " + lastname)
       tuition = request.form.get('tuition')
       print("tuition from form is " + tuition)
       college = request.form.get('college')

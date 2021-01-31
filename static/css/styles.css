@@ -19,7 +19,7 @@ p{
     font-family: var(--font-default);
 }
 
-  label {
+label {
     font-family: var(--font-default);
     font-weight:bold;
     color: var(--dark-green);
