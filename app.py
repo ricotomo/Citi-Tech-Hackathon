@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, flash, redirect, url_for, request
+from flask import Flask, render_template, flash, redirect, url_for, request, jsonify
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
