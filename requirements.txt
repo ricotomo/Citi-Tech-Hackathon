@@ -17,3 +17,4 @@ pyodbc==4.0.30
 dataset
 pandas==1.2.0
 numpy==1.19.5 
+sklearn

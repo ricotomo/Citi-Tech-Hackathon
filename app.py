@@ -1,6 +1,7 @@
 import sqlite3, dataset
 from flask import Flask, render_template, flash, redirect, url_for, request, jsonify, make_response
 import numpy as np
+import pickle
 import pandas as pd
 
 app = Flask(__name__)
@@ -147,7 +148,7 @@ def ISA_form():
 #Handling request
 def get_input(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol):
   input_array = np.array([[sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol, np.nan]])
-    return pd.DataFrame(input_array, columns=['SIBS', 'DEGREE', 'PADEG', 'MADEG', 'SEX', 'MAJOR1', 'DIPGED', 'FAMILY16', 'PARBORN', 'GRANBORN', 'POLVIEWS', 'INCOME'])
+  return pd.DataFrame(input_array, columns=['SIBS', 'DEGREE', 'PADEG', 'MADEG', 'SEX', 'MAJOR1', 'DIPGED', 'FAMILY16', 'PARBORN', 'GRANBORN', 'POLVIEWS', 'INCOME'])
 
 
 def return_prediction(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol):
@@ -189,7 +190,7 @@ def return_prediction(sibs, degree, daded, momed, gender, major, diploma, guardi
 
   return model.predict(data_final.tail(1))
 
-def return_ROI(pred)
+def return_ROI(pred):
     duration = 10
     interest = 0.25
 
