@@ -28,6 +28,7 @@ Figma clickdummy: https://www.figma.com/proto/Qtv7IkeX6LmxaycgjtDRTP/Citi-ISA?no
 Pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg7p5wT6JvKF4ckJ?e=PjSoS5  
 Data analytics branch readme: https://github.com/ricotomo/Citi-Tech-Hackathon/tree/data_analytics  
 (for a breakdown of how we built and trained a model, tested ML algorithms, and calculate our predictions)
+Azure deployment: http://citihack.azurewebsites.net  
 
 ## Contributors
 
