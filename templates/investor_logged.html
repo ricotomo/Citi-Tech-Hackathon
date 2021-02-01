@@ -225,12 +225,11 @@
     </div>
     <div class="text-right">
         
-      
-        <button class="btn btn-default btn-lg " onclick = "location.href = '/'">For Students</button>
-          <button class="btn btn-default btn-lg " onclick = "location.href = 'investor_landing'";>For Investors</button>
-          <button class="btn btn-default btn-lg ">About Us</button>
-  
-                    
+        <button type="button"  >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>                  
           
 
 
@@ -255,25 +254,23 @@
       </div>
       <div class="form-group">
         <label for="tuition">Tuition Amount</label>
-        <input type="tuition" class="form-control" name="tuition" id = "tuition" >
+        <input type="tuition" class="form-control" name="tuition">
       </div>
       <div class="form-group">
         <label for="major">Major</label>
-        <select class="form-control" name="major" id="major" >
+        <select class="form-control" name="major">
           <option>Select your future major</option>
-          <option>ART</option>
-          <option>BUSINESS ADMINISTRATION</option>
           <option>COMPUTER SCIENCE</option>
-          <option>EDUCATION</option>
-          <option>ENGINEERING</option>
+          <option>Finance</option>
+          <option>Education</option>
         </select>
       </div>
       <div class="form-group">
           <label for="college">College</label>
-          <select class="form-control" name="college" id = "college">
+          <select class="form-control" name="college">
               <option>Select your future college</option>
               <option>University of Florida</option>
-              <option>Carnegie Mellon</option>
+              <option>CARNEGIE MELLON</option>
               <option>Rutgers University</option>
           </select>
       </div>
@@ -290,8 +287,9 @@
         <div class = "package">
           <h2>{{ student[0] }} {{student[1]}}</h2>
           <h4>Tuition: ${{student[2]}}</h4>
-          <h4>Major: {{student[3]}}</h4>
+          <h4>Major: {{student[5]}}</h4>
           <h4>College: {{student[4]}}</h4>
+          <h4>Expected ROI: {{student[18]}}</h4>
         </div><br>
         {% endfor %}  
         
@@ -309,22 +307,22 @@
 
 
 <script>
-// $(document).ready(function(){
-//   // Add smooth scrolling to all links in navbar + footer link
-//   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-//     // Make sure this.hash has a value before overriding default behavior
-//     if (this.hash !== "") {
-//       // Prevent default anchor click behavior
-//       event.preventDefault();
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
 
-//       // Store hash
-//       var hash = this.hash;
+      // Store hash
+      var hash = this.hash;
 
-//       // Using jQuery's animate() method to add smooth page scroll
-//       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-//       $('html, body').animate({
-//         scrollTop: $(hash).offset().top
-//       }, 900, function(){
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
@@ -333,28 +331,17 @@
     } // End if
   });
   
-//   $(window).scroll(function() {
-//     $(".slideanim").each(function(){
-//       var pos = $(this).offset().top;
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
 
-//       var winTop = $(window).scrollTop();
-//         if (pos < winTop + 600) {
-//           $(this).addClass("slide");
-//         }
-//     });
-//   });
-// })
-function clicked_apply()
-{
-  var tuition_input = document.getElementById("tuition").value;
-  var major_input = document.getElementById("major").value;
-  var college_input = document.getElementById("college").value;
-
-  console.log(tuition_input);
-  console.log(major_input);
-  console.log(college_input);
-}
-</script>
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
 
 
 
