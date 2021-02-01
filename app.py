@@ -62,22 +62,49 @@ def investor_landing():
       with sqlite3.connect("database.db") as con:
         cur = con.cursor()
         if(college == "Select your future college" and major != 'Select your future major'):
-          cur.execute("SELECT * FROM isastudent1  WHERE major is (?)", (major,))
+          cur.execute("SELECT * FROM isastudent2  WHERE major is (?)", (major,))
         elif(college != "Select your future college" and major == 'Select your future major'):
-          cur.execute("SELECT * FROM isastudent1  WHERE college is (?)", (college,))
+          cur.execute("SELECT * FROM isastudent2  WHERE college is (?)", (college,))
         else:
-          cur.execute("SELECT * FROM isastudent1  WHERE college is (?) AND major is (?)", (college, major,))
+          cur.execute("SELECT * FROM isastudent2  WHERE college is (?) AND major is (?)", (college, major,))
+        
         items = cur.fetchall()
-        print("working...")
-        for item in items:
-            print(item)
-        cur.execute("SELECT * FROM isastudent1")
-        #allstudents = cur.fetchall()
+        item_list=[]
+        for item in items: 
+          firstname = item[0]
+          lastname = item[1]
+          tuition = item[2]
+          diploma = item[3] 
+          college = item[4]
+          major = item[5]
+          degree = item[6]
+          verification = item[7]
+          package = item[8]
+          gender = item[9]
+          momed = item[10]
+          daded = item[11]
+          sibs = item[12]
+          guardian = item[13] 
+          parusa = item[14]
+          granusa = item[15] 
+          pol = item[16]
+          msg = item[17]
+          prediction = return_prediction(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol)
+          roi = return_ROI(prediction, item[2])
+          
+          item_list.append((firstname, lastname, tuition,  diploma, college, major, degree, verification, package, gender, momed, daded, sibs, guardian, parusa, granusa, pol, msg, roi))
 
+          print(roi)
+          print(item)
+        print("working...")
+        for item in item_list:
+            print(item)
+        cur.execute("SELECT * FROM isastudent2")
+        #allstudents = cur.fetchall()
         #items = make_response(jsonify(items), 200)
         #items = jsonify(items)
       #return render_template('printresults.html', items=items)
-      return render_template('investor_logged.html', items=items)
+      return render_template('investor_logged.html', items=item_list)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
 def ISA_form():
@@ -155,6 +182,7 @@ def get_input(sibs, degree, daded, momed, gender, major, diploma, guardian, paru
 def return_prediction(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol):
   user_input = get_input(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol)
   data = pd.read_csv("raw_final.csv")
+  user_input = get_input(sibs, degree, daded, momed, gender, major, diploma, guardian, parusa, granusa, pol)
   data = data.append(user_input)
 
   data_final = pd.get_dummies(data.drop(columns=["SIBS", "INCOME"]))
@@ -192,17 +220,17 @@ def return_prediction(sibs, degree, daded, momed, gender, major, diploma, guardi
 
   return model.predict(data_final.tail(1))
 
-def return_ROI(pred):
+def return_ROI(pred, tuition):
     duration = 10
     interest = 0.25
-
+    tuition = int(tuition)
     if pred < 30000:
       duration = 15
 
     if tuition > 100000:
       interest = 0.3
 
-    return (((duration*interest) - tuition) / tuition) * 100
+    return ((((pred*duration*interest) - tuition) / tuition) * 100)/ duration
 
 if __name__ == "__main__":
     app.run(debug=True)
