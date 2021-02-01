@@ -99,11 +99,13 @@ def investor_landing():
         for item in item_list:
             print(item)
         cur.execute("SELECT * FROM isastudent2")
-        #allstudents = cur.fetchall()
+        allstudents = cur.fetchall()
+        print(allstudents)
+        print(len(allstudents))
         #items = make_response(jsonify(items), 200)
         #items = jsonify(items)
       #return render_template('printresults.html', items=items)
-      return render_template('investor_logged.html', items=item_list)
+      return render_template('investor_logged.html', items=item_list, allstudents = allstudents)
 
 @app.route('/ISA_form',methods = ['POST','GET'])
 def ISA_form():
