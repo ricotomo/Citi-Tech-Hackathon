@@ -54,19 +54,43 @@ def investor_landing():
    if request.method == 'GET':
       return render_template('investor_logged.html')
    elif request.method=='POST':
+      tuition = request.form.get('tuition')
+      print("tuition from form is " + tuition)
       college = request.form.get('college')
       print("college from form is " + college)
       major = request.form.get('major')
       print("major from form is " + major) 
       with sqlite3.connect("database.db") as con:
         cur = con.cursor()
-        if(college == "Select your future college" and major != 'Select your future major'):
-          cur.execute("SELECT * FROM isastudent2  WHERE major is (?)", (major,))
-        elif(college != "Select your future college" and major == 'Select your future major'):
-          cur.execute("SELECT * FROM isastudent2  WHERE college is (?)", (college,))
-        else:
-          cur.execute("SELECT * FROM isastudent2  WHERE college is (?) AND major is (?)", (college, major,))
-        
+   
+        #tuition field not empty
+        if(tuition != ''):
+          lowerTuition = int(tuition) - 5000
+          upperTuition = int(tuition) + 5000
+          #tuition+major
+          if(college == "Select your future college" and major != 'Select your future major'):
+            cur.execute("SELECT * FROM isastudent2  WHERE major is (?) AND tuition BETWEEN (?) AND (?)", (major, str(lowerTuition), str(upperTuition),))
+          #tuition+college
+          elif(college != "Select your future college" and major == 'Select your future major'):
+            cur.execute("SELECT * FROM isastudent2  WHERE college is (?) AND tuition BETWEEN (?) AND (?)", (college,str(lowerTuition), str(upperTuition),))
+          #tuition only
+          elif(college == "Select your future college" and major == 'Select your future major'):
+            cur.execute("SELECT * FROM isastudent2  WHERE tuition BETWEEN (?) AND (?)", (str(lowerTuition), str(upperTuition),))
+          #tuition+major+college
+          elif(college != "Select your future college" and major != 'Select your future major'):
+            cur.execute("SELECT * FROM isastudent2  WHERE major is (?) AND college is (?) AND tuition BETWEEN (?) AND (?)", (major, college,str(lowerTuition), str(upperTuition),))
+        else: #tuition field empty
+          if(college == "Select your future college" and major != 'Select your future major'):
+            cur.execute("SELECT * FROM isastudent2  WHERE major is (?)", (major,))
+          elif(college != "Select your future college" and major == 'Select your future major'):
+            cur.execute("SELECT * FROM isastudent2  WHERE college is (?)", (college,))
+          else:
+            cur.execute("SELECT * FROM isastudent2  WHERE college is (?) AND major is (?)", (college, major,))
+          
+
+          
+          
+
         items = cur.fetchall()
         item_list=[]
         for item in items: 
