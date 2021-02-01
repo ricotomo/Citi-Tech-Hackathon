@@ -20,7 +20,7 @@ A notebook containing the initial analysis of the data:
 - Relationship between numerical features and income.
 - Distributions of numerical features.
 - Correlations (heatmap). 
-- Relationship between categorical features and income. 
+- Relationship between categorical features and income. Our analysis showed that some unexpected datapoints such as the number of grandparents born in the USA correlates strongly with income post-graduation, so when the students sign up for an ISA we ask them this info. 
 - Feature engineering -> dealing with null values, using predictive models to predict null values. 
 
 
