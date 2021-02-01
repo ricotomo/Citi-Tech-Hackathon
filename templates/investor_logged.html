@@ -225,11 +225,12 @@
     </div>
     <div class="text-right">
         
-        <button type="button"  >
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>                  
+      
+        <button class="btn btn-default btn-lg " onclick = "location.href = '/'">For Students</button>
+          <button class="btn btn-default btn-lg " onclick = "location.href = 'investor_landing'";>For Investors</button>
+          <button class="btn btn-default btn-lg ">About Us</button>
+  
+                    
           
 
 
@@ -242,36 +243,51 @@
 </nav>
 
 
+
 <!-- Container -->
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-4">
       <br>
       <form action="" method="post">
-      <div class="form-group">
-        <label for="search">Search</label>
-        <input type="search" class="form-control" name="search">
-      </div>
+
       <div class="form-group">
         <label for="tuition">Tuition Amount</label>
+        <p>Gives all tuition amounts within $5000 difference of entered amount.</p>
         <input type="tuition" class="form-control" name="tuition">
       </div>
       <div class="form-group">
         <label for="major">Major</label>
         <select class="form-control" name="major">
           <option>Select your future major</option>
+          <option>ART</option>
+          <option>BUSINESS ADMINISTRATION</option>
           <option>COMPUTER SCIENCE</option>
-          <option>Finance</option>
-          <option>Education</option>
+          <option>EDUCATION</option>
+          <option>ENGINEERING</option>
+          <option>HEALTH</option>
+          <option>LAW</option>
+          <option>NURSING</option>
+          <option>PSYCHOLOGY</option>
+  
         </select>
       </div>
       <div class="form-group">
           <label for="college">College</label>
           <select class="form-control" name="college">
               <option>Select your future college</option>
-              <option>University of Florida</option>
+              <option>UNIVERSITY OF FLORIDA</option>
               <option>CARNEGIE MELLON</option>
-              <option>Rutgers University</option>
+              <option>HARVARD UNIVERSITY</option>
+              <option>STANFORD UNIVERSITY</option>
+              <option>MASSACHUESSETS INSTITUTE OF TECHNOLOGY</option>
+              <option>SYRACUSE UNIVERSITY</option>
+              <option>PRINCETON UNIVERSITY</option>
+              <option>COLUMBIA UNIVERSITY</option>
+              <option>YALE UNIVERSITY</option>
+              <option>UNIVERSITY OF CHICAGO</option>
+              <option>UNIVERSITY OF PENNSYLVANIA</option>
+              <option>CALIFORNIA INSTITUTE OF TECHNOLOGY</option>
           </select>
       </div>
       
@@ -282,7 +298,7 @@
     <div class="col-sm-8">
         <br>
         <h2>Income Share Opportunities</h2>
-        <div id = "packages"> </div>
+        
         {% for student in items %}
         <div class = "package">
           <h2>{{ student[0] }} {{student[1]}}</h2>

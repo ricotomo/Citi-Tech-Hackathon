@@ -62,14 +62,18 @@
                             <p class = "form-explainer" style="margin-top: 2rem;">Value: <span id="rangeout"></span></p>
                         </div>
                         <script>
-                            var slider = document.getElementById("tuitionRange1");
-                            var output = document.getElementById("rangeout");
-                            output.innerHTML = slider.value; // Display the default slider value
+                            var slider1 = document.getElementById("tuitionRange1");
+                            var output1 = document.getElementById("rangeout");
+                            output1.innerHTML = slider1.value; // Display the default slider value
 
                             // Update the current slider value (each time you drag the slider handle)
-                            slider.oninput = function() {
-                            output.innerHTML = this.value;
+                            slider1.oninput = function() 
+                            {
+                                output1.innerHTML = this.value;
+                                console.log(this.value);
                             } 
+
+                          
                         </script>
                     </div>
                     <div class="form-group">
@@ -107,7 +111,7 @@
                             <option>UNIVERSITY OF FLORIDA</option>
                             <option>CARNEGIE MELLON</option>
                             <option>HARVARD UNIVERSITY</option>
-                            <option>STANDFORD UNIVERSITY</option>
+                            <option>STANFORD UNIVERSITY</option>
                             <option>MASSACHUESSETS INSTITUTE OF TECHNOLOGY</option>
                             <option>SYRACUSE UNIVERSITY</option>
                             <option>PRINCETON UNIVERSITY</option>
