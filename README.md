@@ -10,6 +10,13 @@ Submission for the Jan 2021 Citi Tech Hackathon. Univest is a two-sided marketpl
 * Flask
 * Bootstrap
 * SQLite
+* Linear Regression
+* Lasso
+* Ridge Regression
+* Random Forest
+* XGBoost
+* Artificial Neural Network
+
 ## Dependencies
 * Install requirements with "pip install -r requirements.txt"
 
