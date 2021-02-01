@@ -24,8 +24,8 @@ In our MVP students can create a request for an ISA. This is posted to our backe
 
 ## Links
 Figma clickdummy: https://www.figma.com/proto/Qtv7IkeX6LmxaycgjtDRTP/Citi-ISA?node-id=23%3A2&scaling=min-zoom                                            
-Pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg7p5wT6JvKF4ckJ?e=PjSoS5
-  Data analytics branch readme: https://github.com/ricotomo/Citi-Tech-Hackathon/tree/data_analytics  
+Pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg7p5wT6JvKF4ckJ?e=PjSoS5  
+Data analytics branch readme: https://github.com/ricotomo/Citi-Tech-Hackathon/tree/data_analytics  
 (for a breakdown of how we built and trained a model, tested ML algorithms, and calculate our predictions)
 
 ## Contributors
