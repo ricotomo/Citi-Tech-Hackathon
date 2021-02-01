@@ -24,7 +24,7 @@ In our MVP students can create a request for an ISA. This is posted to our backe
 
 ## Links
 Figma clickdummy: https://www.figma.com/proto/Qtv7IkeX6LmxaycgjtDRTP/Citi-ISA?node-id=23%3A2&scaling=min-zoom                                            
-Pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg6RDpf7s3xTf2yI?e=JomkyM
+Pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg7p5wT6JvKF4ckJ?e=PjSoS5
 
 ## Contributors
 
