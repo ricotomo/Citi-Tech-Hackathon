@@ -21,6 +21,8 @@ Submission for the Jan 2021 Citi Tech Hackathon. Univest is a two-sided marketpl
 * Install requirements with "pip install -r requirements.txt"
 
 ## Links
+Figma: https://www.figma.com/file/Qtv7IkeX6LmxaycgjtDRTP/Citi-ISA?node-id=0%3A1                                               
+pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg6RDpf7s3xTf2yI?e=JomkyM
 
 ## Contributors
 
