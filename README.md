@@ -11,7 +11,8 @@ In our MVP students can create a request for an ISA. This is posted to our backe
 * Python
 * Flask
 * Bootstrap
-* SQLite
+* SQLite  
+* Azure
 * Linear Regression
 * Lasso
 * Ridge Regression
