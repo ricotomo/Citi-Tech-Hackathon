@@ -2,8 +2,10 @@
 
 ## About
 Submission for the Jan 2021 Citi Tech Hackathon. Univest is a two-sided marketplace for Income Share Agreements (ISAs). Students sign up and indicate how much money they need for tuition, then they get offers from investors and choose the best one. Investors submit offers to fund the ISA. They can expect extremely low risk and medium to high returns. ​
+
+In our MVP students can create a request for an ISA. This is posted to our backend and stored in a SQLite DB. Our machine learning algorithms then go to work calculating the expected yearly ROI over a 10 year timespan after graduation. Investors can search for this ISA requests and see the expected ROI. 
+
 ![](PredictROI.gif)
-![Univest Homepage](univest_homepage.png)
 
 ## Built With
 * Python
@@ -22,7 +24,7 @@ Submission for the Jan 2021 Citi Tech Hackathon. Univest is a two-sided marketpl
 
 ## Links
 Figma: https://www.figma.com/file/Qtv7IkeX6LmxaycgjtDRTP/Citi-ISA?node-id=0%3A1                                               
-pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg6RDpf7s3xTf2yI?e=JomkyM
+Pitchdeck: https://1drv.ms/p/s!Ai_wUCcxJ4B3kg6RDpf7s3xTf2yI?e=JomkyM
 
 ## Contributors
 
